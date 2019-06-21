@@ -18,12 +18,13 @@ INCDIR+=-I/usr/local/include
 LIBDIR=-L$(HOME)/lib
 LIBDIR+=-L/usr/local/lib
 
-re-router: re-router.o
-	$(CC) $(OPT) re-router.o  $(LIBDIR) -llog4cplus -lpthread -o re-router
+new_main: new_main.o
+	$(CC) $(OPT) new_main.o  $(LIBDIR) -llog4cplus -lpthread -o new_main
 
-re-router.o: re-router.cpp basics.hpp dijkstra.hpp events.hpp\
-           graph.hpp measurements.hpp timer.hpp visualization.hpp
-	$(CC) -c $(FLAGS) $(OPT) $(INCDIR) re-router.cpp -o re-router.o
+new_main.o: new_main.cpp basics.hpp dijkstra.hpp events.hpp\
+           graph.hpp measurements.hpp timer.hpp visualization.hpp\
+		   tools.hpp
+	$(CC) -c $(FLAGS) $(OPT) $(INCDIR) new_main.cpp -o new_main.o
 
 clean:
-	rm -f *~ *.o re-router *.dot
+	rm -f *~ *.o new_main *.dot

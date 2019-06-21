@@ -24,12 +24,23 @@ using namespace log4cplus;
 // globals
 
 /// Request mode.
-enum Request_Mode { SINGLE, ALL_PAIRS, ON_LINE, RANDOM, FILE_PAIRS };
-
+enum Request_Mode
+{
+  SINGLE,
+  ALL_PAIRS,
+  ON_LINE,
+  RANDOM,
+  FILE_PAIRS
+};
 
 /// Shortest-path algorithms.
-enum Algorithm { STD=0, GO=1, BI=2, GOBI=3 };
-
+enum Algorithm
+{
+  STD = 0,
+  GO = 1,
+  BI = 2,
+  GOBI = 3
+};
 
 /// Event handler.
 Event_Handler event_handler;
@@ -38,33 +49,33 @@ Event_Handler event_handler;
 Logger main_logger = Logger::getInstance("Router");
 
 /// Trip_Request input operator.
-istream& operator>>(istream& in, Trip_Request& request)
+istream &operator>>(istream &in, Trip_Request &request)
 {
   in >> request.source >> request.destination >> request.start_time;
   return in;
 }
 
 /// Plan output operator.
-ostream& operator<<(ostream& out, Plan& plan)
+ostream &operator<<(ostream &out, Plan &plan)
 {
   const unsigned int plan_size = plan.path.size();
   out << plan_size << '\t';
 
-  if (plan_size == 0)         // No plan
+  if (plan_size == 0) // No plan
     return out;
-  else {
-    for (Plan_Iterator it=plan.path.begin(); it != plan.path.end(); ++it){
+  else
+  {
+    for (Plan_Iterator it = plan.path.begin(); it != plan.path.end(); ++it)
+    {
       out << it->external_id << '\t' << it->time << "\t";
 
       // link ID travelled added.
-      if( it != plan.path.begin() )
-	out << it->edge_label << '\t';
+      if (it != plan.path.begin())
+        out << it->edge_label << '\t';
     }
-
   }
   return out;
 }
-
 
 /// Request handler.
 class Request_Handler
@@ -86,7 +97,7 @@ protected:
   Trip_Request trip_request;
 
   /// Network graph.
-  Network_Graph* network;
+  Network_Graph *network;
 
   /// Source vertex iterator.
   Network_Graph::const_iterator it1;
@@ -95,16 +106,16 @@ protected:
   Network_Graph::const_iterator it2;
 
   /// Stream for reading requests from file.
-  char* stream_filename;
+  char *stream_filename;
   fstream trip_stream;
 
 public:
   /// Constructor.
-  Request_Handler(): request_mode(ON_LINE), nmb_queries(0), random_seed(0),
-		     requests_finished(false), trip_request(), stream_filename(0) {}
+  Request_Handler() : request_mode(ON_LINE), nmb_queries(0), random_seed(0),
+                      requests_finished(false), trip_request(), stream_filename(0) {}
 
   /// Set request mode.
-  void set_mode(const Request_Mode& m) { request_mode = m; }
+  void set_mode(const Request_Mode &m) { request_mode = m; }
 
   /// Set number of queries.
   void set_nmb_queries(int n) { nmb_queries = n; }
@@ -113,7 +124,7 @@ public:
   void set_random_seed(int s) { random_seed = s; }
 
   /// Set single request.
-  void set_request(const Trip_Request& r)
+  void set_request(const Trip_Request &r)
   {
     trip_request.source = r.source;
     trip_request.destination = r.destination;
@@ -122,13 +133,13 @@ public:
   }
 
   /// Set network graph.
-  void set_network(Network_Graph* n) { network = n; }
+  void set_network(Network_Graph *n) { network = n; }
 
   /// Set stream for trips.
 
-  void set_stream(const char* stream_filename)
+  void set_stream(const char *stream_filename)
   {
-    this->stream_filename = const_cast<char*>(stream_filename);
+    this->stream_filename = const_cast<char *>(stream_filename);
   }
 
   /// Get mode.
@@ -142,19 +153,20 @@ public:
   {
     trip_request.nfaID = 0; // HSM - default value.
 
-
     switch (request_mode)
     {
     case FILE_PAIRS:
 
-      if( !stream_filename ){
+      if (!stream_filename)
+      {
         cout << "No filename for pairs given. Bye!" << endl;
         exit(-1);
       }
 
       trip_stream.open(stream_filename);
 
-      if( !trip_stream ){
+      if (!trip_stream)
+      {
         cout << "There was an error opening the file with source destination pairs." << endl;
         cout << "Filename given: " << stream_filename << endl;
         exit(-1);
@@ -166,7 +178,8 @@ public:
       double t0;
       trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
 
-      if( trip_stream.eof() || trip_stream.bad() ){
+      if (trip_stream.eof() || trip_stream.bad())
+      {
         cout << "Okay, the trip file seems to be empty. Bye!" << endl;
         requests_finished = true;
         //exit(-1);
@@ -184,10 +197,10 @@ public:
       break;
     case ALL_PAIRS:
       it1 = network->begin();
-      ++it1;  // skip -1
+      ++it1; // skip -1
       it2 = network->begin();
-      ++it2;  // skip -1
-      ++it2;  // skip source==destination
+      ++it2; // skip -1
+      ++it2; // skip source==destination
       trip_request.source = (*it1)->external_id();
       trip_request.destination = (*it2)->external_id();
       break;
@@ -197,9 +210,9 @@ public:
       break;
     case RANDOM:
       if (random_seed != 0)
-	srand(random_seed);
-      trip_request.source = (*network)[(int)round((double)rand()/RAND_MAX*(network->size()-1))]->external_id();
-      trip_request.destination = (*network)[(int)round((double)rand()/RAND_MAX*(network->size()-1))]->external_id();
+        srand(random_seed);
+      trip_request.source = (*network)[(int)round((double)rand() / RAND_MAX * (network->size() - 1))]->external_id();
+      trip_request.destination = (*network)[(int)round((double)rand() / RAND_MAX * (network->size() - 1))]->external_id();
       --nmb_queries;
       break;
     }
@@ -221,7 +234,8 @@ public:
       double t0;
       trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
 
-      if( trip_stream.eof() || trip_stream.bad() ){
+      if (trip_stream.eof() || trip_stream.bad())
+      {
         requests_finished = true;
         break;
       }
@@ -238,20 +252,21 @@ public:
       requests_finished = true;
       break;
     case ALL_PAIRS:
-      do {
-	++it2;
-	if (it2 == network->end())
-	{
-	  ++it1;
-	  it2 = network->begin();
-	  ++it2;
-	}
-	if (it1 == network->end())
-	{
-	  requests_finished = true;
-	  break;
-	}
-      } while (requests_finished==false && *it1==*it2);
+      do
+      {
+        ++it2;
+        if (it2 == network->end())
+        {
+          ++it1;
+          it2 = network->begin();
+          ++it2;
+        }
+        if (it1 == network->end())
+        {
+          requests_finished = true;
+          break;
+        }
+      } while (requests_finished == false && *it1 == *it2);
       trip_request.source = (*it1)->external_id();
       trip_request.destination = (*it2)->external_id();
       break;
@@ -262,50 +277,47 @@ public:
     case RANDOM:
       if (nmb_queries > 0)
       {
-	trip_request.source = (*network)[(int)round((double)rand()/RAND_MAX*(network->size()-1))]->external_id();
-	trip_request.destination = (*network)[(int)round((double)rand()/RAND_MAX*(network->size()-1))]->external_id();
-	--nmb_queries;
+        trip_request.source = (*network)[(int)round((double)rand() / RAND_MAX * (network->size() - 1))]->external_id();
+        trip_request.destination = (*network)[(int)round((double)rand() / RAND_MAX * (network->size() - 1))]->external_id();
+        --nmb_queries;
       }
-      else requests_finished = true;
+      else
+        requests_finished = true;
       break;
     }
   }
 };
 
-
-
 // ----------------------------------------------------------------------------
-
 
 /// Router.
 class Router
 {
 protected:
   /// Network graph.
-  Network_Graph& network;
+  Network_Graph &network;
 
   /// NFA graph.
-  vector<NFA_Graph*>& nfaVector;
+  vector<NFA_Graph *> &nfaVector;
 
   /// Routing engines.
-  vector< vector<Shortest_Path*> > dijkstra;
-
+  vector<vector<Shortest_Path *>> dijkstra;
 
 public:
   /// Constructor.
-  Router(Network_Graph& n1, vector<NFA_Graph*>& nfaVec):
-    network(n1), nfaVector(nfaVec)
+  Router(Network_Graph &n1, vector<NFA_Graph *> &nfaVec) : network(n1), nfaVector(nfaVec)
   {
     const unsigned int nNFA = nfaVec.size();
 
-    dijkstra = vector<vector<Shortest_Path*> >(nNFA);
+    dijkstra = vector<vector<Shortest_Path *>>(nNFA);
 
-    for(unsigned int i=0; i<nNFA; ++i){
+    for (unsigned int i = 0; i < nNFA; ++i)
+    {
       dijkstra[i].resize(4);
 
-      dijkstra[i][STD]  = new Shortest_Path(network,    *nfaVector[i]);
-      dijkstra[i][GO]   = new Goal_Dijkstra(network,    *nfaVector[i]);
-      dijkstra[i][BI]   = new Bi_Dijkstra(network,      *nfaVector[i]);
+      dijkstra[i][STD] = new Shortest_Path(network, *nfaVector[i]);
+      dijkstra[i][GO] = new Goal_Dijkstra(network, *nfaVector[i]);
+      dijkstra[i][BI] = new Bi_Dijkstra(network, *nfaVector[i]);
       dijkstra[i][GOBI] = new Bi_Goal_Dijkstra(network, *nfaVector[i]);
 
       // dijkstra[STD] = new Shortest_Path(network, nfa);
@@ -316,8 +328,8 @@ public:
   }
 
   /// Compute route with specified routing algorithm.
-  void find_path(Algorithm algorithm, Trip_Request trip, Plan& plan,
-		 double& time_elapsed, unsigned int nfaChoice = 0)
+  void find_path(Algorithm algorithm, Trip_Request trip, Plan &plan,
+                 double &time_elapsed, unsigned int nfaChoice = 0)
   {
     dijkstra[nfaChoice][algorithm]->init(trip);
     Timer timer;
@@ -327,10 +339,7 @@ public:
   }
 };
 
-
-
 // ----------------------------------------------------------------------------
-
 
 /// Print usage.
 void print_usage()
@@ -359,30 +368,29 @@ void print_usage()
        << " -z           zap existing results file if it already exists" << endl;
 }
 
-
-
 /// Main function.
-int main(int argc, char* argv[])
+int main(int argc, char *argv[])
 {
   // initialize logger
   myConsoleAppender->setLayout(myLayout);
   main_logger.addAppender(myConsoleAppender);
   main_logger.setLogLevel(INFO_LOG_LEVEL);
 
-  if (argc == 1){
+  if (argc == 1)
+  {
     print_usage();
     return 0;
   }
 
   // set defaults
 
-  const char* network_filename = "../networks/simfra-test.txt";
-  const char* coords_filename = "../networks/simfra-test-coords.txt";
-  const char* nfa_filename = "../nfas/simfra-nfa.txt";
-  const char* nfa_collection_filename = "../nfas/trans_nfa_file.txt";
-  const char* viz_filename = "";
-  const char* pairs_filename = "";
-  const char* out_filename = "plans.txt";
+  const char *network_filename = "../networks/simfra-test.txt";
+  const char *coords_filename = "../networks/simfra-test-coords.txt";
+  const char *nfa_filename = "../nfas/simfra-nfa.txt";
+  const char *nfa_collection_filename = "../nfas/trans_nfa_file.txt";
+  const char *viz_filename = "";
+  const char *pairs_filename = "";
+  const char *out_filename = "plans.txt";
 
   // parse command-line arguments
   int c;
@@ -397,7 +405,6 @@ int main(int argc, char* argv[])
 
   unsigned singleNFA = 1;
 
-
   while ((c = getopt(argc, argv, "a:c:d:f:g:ilnN:o:p:r:s:t:v:z")) != -1)
   {
     int algo = 0;
@@ -408,27 +415,28 @@ int main(int argc, char* argv[])
     case 'a':
       algo = atoi(optarg);
 
-      switch (algo) {
+      switch (algo)
+      {
       case STD:
-	cout << "*** Standard Dijkstra" << endl;
-	event_handler.set_filename_affix("D");
+        cout << "*** Standard Dijkstra" << endl;
+        event_handler.set_filename_affix("D");
         algorithm = STD;
-	break;
+        break;
       case GO:
-	cout << "*** Goal-directed Dijkstra" << endl;
-	event_handler.set_filename_affix("G");
+        cout << "*** Goal-directed Dijkstra" << endl;
+        event_handler.set_filename_affix("G");
         algorithm = GO;
-	break;
+        break;
       case BI:
-	cout << "*** Bidirectional Dijkstra" << endl;
-	event_handler.set_filename_affix("B");
+        cout << "*** Bidirectional Dijkstra" << endl;
+        event_handler.set_filename_affix("B");
         algorithm = BI;
-	break;
+        break;
       case GOBI:
-	cout << "*** Bidirectional, goal-directed Dijkstra" << endl;
-	event_handler.set_filename_affix("C");
+        cout << "*** Bidirectional, goal-directed Dijkstra" << endl;
+        event_handler.set_filename_affix("C");
         algorithm = GOBI;
-	break;
+        break;
       default:
         cout << "Invalid algorithm specified. Bye!" << endl;
         exit(-1);
@@ -437,7 +445,9 @@ int main(int argc, char* argv[])
 
       break;
 
-    case 'c': coords_filename = optarg; break;
+    case 'c':
+      coords_filename = optarg;
+      break;
     case 'd':
       request.destination = atoi(optarg);
       request_handler.set_mode(SINGLE);
@@ -447,7 +457,9 @@ int main(int argc, char* argv[])
       pairs_filename = optarg;
       request_handler.set_stream(pairs_filename);
       break;
-    case 'g': network_filename = optarg; break;
+    case 'g':
+      network_filename = optarg;
+      break;
     case 'i':
       event_handler.set_record(true);
       event_handler.set_trace_mode(true);
@@ -466,7 +478,9 @@ int main(int argc, char* argv[])
     case 'o':
       out_filename = optarg;
       break;
-    case 'p': request_handler.set_random_seed(atoi(optarg)); break;
+    case 'p':
+      request_handler.set_random_seed(atoi(optarg));
+      break;
     case 'r':
       request_handler.set_mode(RANDOM);
       request_handler.set_nmb_queries(atoi(optarg));
@@ -506,16 +520,19 @@ int main(int argc, char* argv[])
 
   //  NFA_Graph nfa(nfa_filename, network);
 
-  vector<NFA_Graph*> nfaVector;
+  vector<NFA_Graph *> nfaVector;
 
-  if ( singleNFA == 1 ){
-    NFA_Graph* nfa = new NFA_Graph(nfa_filename, network);
+  if (singleNFA == 1)
+  {
+    NFA_Graph *nfa = new NFA_Graph(nfa_filename, network);
     nfaVector.push_back(nfa);
   }
-  else {
+  else
+  {
     ifstream file(nfa_collection_filename);
 
-    if( !file ){
+    if (!file)
+    {
       cout << "There was an error opening the file specifying the collection of NFAs." << endl;
       cout << "Filename given: " << nfa_collection_filename << endl;
       exit(-1);
@@ -529,13 +546,13 @@ int main(int argc, char* argv[])
     file >> nNFAs;
     cout << "Found " << nNFAs << " NFAs" << endl;
     file.get();
-    for(unsigned int i=0; i<nNFAs; ++i){
+    for (unsigned int i = 0; i < nNFAs; ++i)
+    {
       file.getline(buffer, 5000, '\n');
       cout << "NFA: " << i << "\t" << buffer << endl;
-      NFA_Graph* nfa = new NFA_Graph(buffer, network);
+      NFA_Graph *nfa = new NFA_Graph(buffer, network);
       nfaVector.push_back(nfa);
     }
-
   }
 
   cout << "Status." << endl;
@@ -552,9 +569,9 @@ int main(int argc, char* argv[])
   cout << "Status..." << endl;
 
   // initialize request handler
-  if ( request_handler.mode()==ALL_PAIRS ||
-       request_handler.mode()==RANDOM ||
-       request_handler.mode()==FILE_PAIRS )
+  if (request_handler.mode() == ALL_PAIRS ||
+      request_handler.mode() == RANDOM ||
+      request_handler.mode() == FILE_PAIRS)
     request_handler.set_network(&network);
 
   request_handler.init();
@@ -568,12 +585,11 @@ int main(int argc, char* argv[])
   // assuming -z for now.
 
   out_file.open(out_filename);
-  if( !out_file ){
+  if (!out_file)
+  {
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-
-
 
   // process queries
   while (!request_handler.finished())
@@ -585,7 +601,6 @@ int main(int argc, char* argv[])
     // cout << "-->" << trip_request.id << '\t'
     //      << trip_request.source << '\t'
     //      << trip_request.destination << endl;
-
 
     // ------------------------------------------------------------
 
@@ -613,9 +628,7 @@ int main(int argc, char* argv[])
     // check for errors -- HSM: adapted.
 
     bool error = false;
-    string error_message = "Differing distances:  request "
-      + itos(trip_request.source) + "--" + itos(trip_request.destination)
-      + "  distances";
+    string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
 
     error_message += " " + ftos(distance);
     error_message += "  differences";
@@ -623,8 +636,8 @@ int main(int argc, char* argv[])
     if (error)
       LOG4CPLUS_ERROR(main_logger, error_message);
 
-//     else
-//       LOG4CPLUS_INFO(main_logger, "Distance: " + ftos(distance));
+    //     else
+    //       LOG4CPLUS_INFO(main_logger, "Distance: " + ftos(distance));
 
     // ------------------------------------------------------------
 
