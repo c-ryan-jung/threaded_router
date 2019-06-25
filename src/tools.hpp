@@ -166,7 +166,7 @@ public:
         vector<Trip_Request> request_vector;
         if (!stream_filename)
         {
-            cout << "No filename for pairs given. Bye!" << endl;
+            cout << "No filename for pairs given. Bye!" << endl; 
             exit(-1);
         }
 
@@ -179,21 +179,25 @@ public:
             exit(-1);
         }
 
+        long int t_id, src, dest, nfaID;
+        double t0;
+        cout<<"okay"<< endl;
         do
         {
-            long int t_id, src, dest, nfaID;
-            double t0;
+
             if (trip_stream.eof() || trip_stream.bad())
             {
                 requests_finished = true;
                 continue;
             }
+            trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
             trip_request.id = t_id;
             trip_request.source = src;
             trip_request.destination = dest;
             trip_request.start_time = t0;
             trip_request.nfaID = nfaID;
             request_vector.push_back(trip_request);
+            //cout<<"okay"<<endl;
         } while (!finished());
 
         return request_vector;
