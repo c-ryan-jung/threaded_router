@@ -184,13 +184,13 @@ public:
         
         do
         {
-
+            trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
             if (trip_stream.eof() || trip_stream.bad())
             {
                 requests_finished = true;
                 continue;
             }
-            trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
+            
             trip_request.id = t_id;
             trip_request.source = src;
             trip_request.destination = dest;

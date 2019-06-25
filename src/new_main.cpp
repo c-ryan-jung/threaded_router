@@ -70,8 +70,6 @@ void print_usage()
        << " -N <NFAFile> file specifying nfa collection" << endl
        << " -t <time>    time of departure" << endl;
 }
-//TODO this has to modify the init method?
-//Possibly use this in the main thread and pass vectors to child threads
 
 //Threaded trip request processing
 void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
@@ -276,7 +274,7 @@ int main(int argc, char *argv[])
   }
 
   //the start of the threaded method
-  
+
   std::thread test(thread_method, std::ref(request_handler), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
   test.join();
 
