@@ -181,7 +181,7 @@ public:
 
         long int t_id, src, dest, nfaID;
         double t0;
-        cout<<"okay"<< endl;
+        
         do
         {
 
