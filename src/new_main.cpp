@@ -127,6 +127,7 @@ void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &n
   request_handler.set_network(&network);
 
   //request_handler.init();
+  //put a thing here -----------------------v change  that
   vector<Trip_Request> trip_list = request_handler.thread_request();
   cout << "Status...." << endl;
 
