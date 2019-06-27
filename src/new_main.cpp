@@ -11,6 +11,7 @@
 #include <iostream>
 #include <fstream>
 #include <thread>
+#include <mutex>
 
 #include "dijkstra.hpp"
 #include "graph.hpp"
@@ -26,6 +27,7 @@ using namespace log4cplus;
 
 Event_Handler event_handler;
 
+std::mutex mtx;
 /// Logger.
 Logger main_logger = Logger::getInstance("Router");
 
@@ -72,8 +74,9 @@ void print_usage()
 }
 
 //Threaded trip request processing
-void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
+  cout << "works" << endl;
   vector<NFA_Graph *> nfaVector;
 
   if (singleNFA == 1)
@@ -83,6 +86,7 @@ void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &n
   }
   else
   {
+    cout << "works" << endl;
     ifstream file(nfa_collection_filename);
 
     if (!file)
@@ -109,7 +113,7 @@ void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &n
       nfaVector.push_back(nfa);
     }
   }
-
+  
   cout << "Status." << endl;
 
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
@@ -128,7 +132,7 @@ void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &n
 
   //request_handler.init();
   //put a thing here -----------------------v change  that
-  vector<Trip_Request> trip_list = request_handler.thread_request();
+  vector<Trip_Request> trip_list = trips;
   cout << "Status...." << endl;
 
   while(!trip_list.empty()){
@@ -142,11 +146,14 @@ void thread_method(Request_Handler &request_handler, Plan plan, Network_Graph &n
 
     router.find_path((Algorithm)algorithm, request_handler.request(), plan,
                      time_elapsed, trip_request.nfaID);
+    
+    mtx.lock();
     out_file << trip_request.id << '\t'
       << trip_request.source << '\t'
       << trip_request.destination << '\t';
 
     out_file << plan << endl;
+    mtx.unlock();
 
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
@@ -266,18 +273,41 @@ int main(int argc, char *argv[])
 
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
 
-  // process queries
+
+
+
+  //splitting everything up into threads
+  cout << "works" << endl;
+  vector<Trip_Request> initial_v = request_handler.thread_request();
+  int trip_count = initial_v.size();
+  unsigned long const core_count = std::thread::hardware_concurrency();
+
+
+  unsigned long const per_thread = trip_count/core_count;
+  int start = 0;
+  vector<std::thread> threads;
+
   out_file.open(out_filename);
   if (!out_file)
   {
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
+  }  
+  cout << "works" << endl;
+  for(int i = 0 ; i < core_count; i++){
+    cout << "works" << endl;
+    int end = per_thread + start;
+    vector<Trip_Request> thread_part(initial_v.begin() + start, initial_v.begin() + end);
+    threads[i] = std::thread(thread_method, std::ref(request_handler),thread_part, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+    start = end;
   }
-
+  for(auto& entry:threads){
+    entry.join();
+  }
   //the start of the threaded method
 
-  std::thread test(thread_method, std::ref(request_handler), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-  test.join();
+  //std::thread test(thread_method, std::ref(request_handler), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+  //test.join();
 
   out_file.close();
 
