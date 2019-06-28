@@ -289,7 +289,9 @@ int main(int argc, char *argv[])
   }
   for(int i = 0 ; i < big_list.size(); i++){
     threads[i] = std::thread(thread_method, std::ref(request_handler),big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+    threads[i];
   }
+
   for(auto& entry:threads){
     entry.join();
   }
