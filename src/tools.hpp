@@ -161,7 +161,7 @@ public:
     }
 
     //condensed request
-    vector<Trip_Request> thread_request()
+    vector<vector<Trip_Request>> thread_request()
     {
         vector<Trip_Request> request_vector;
         if (!stream_filename)
@@ -181,6 +181,7 @@ public:
 
         long int t_id, src, dest, nfaID;
         double t0;
+
         
         do
         {
@@ -200,7 +201,26 @@ public:
             //cout<<"okay"<<endl;
         } while (!finished());
 
-        return request_vector;
+        unsigned long const cores = std::thread::hardware_concurrency();
+        int vec_size = request_vector.size()/(int)cores;
+        int count = 0;
+        vector<Trip_Request> temp;
+        vector<vector<Trip_Request>> big_list;
+        while(!request_vector.empty()){
+           
+            if(count > vec_size){
+                count = 0;
+                big_list.push_back(temp);
+                temp.clear();
+
+            }
+            else{
+            temp.push_back(request_vector.back());
+            request_vector.pop_back();
+            count++;
+            }
+        }
+        return big_list;
     }
 };
 

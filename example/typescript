@@ -335,4 +335,542 @@ INFO   graph.hpp:773:  Network has 10 vertices.
 works
 works
 works
-./script: line 3:  4984 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requ
+./script: line 3:  4984 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requests.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ..
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router[00m$ git [K[K[K[K./git_deploy 
+Commit message: broken but easy fix
+[master 655fce2] broken but easy fix
+ 6 files changed, 421 insertions(+), 9 deletions(-)
+ create mode 100644 example/typescript
+ create mode 100644 src/.vscode/settings.json
+ rewrite src/new_main (73%)
+Username for 'https://github.com': c-ryan-jung
+Password for 'https://c-ryan-jung@github.com': 
+Counting objects: 10, done.
+Compressing objects:  11% (1/9)   Compressing objects:  22% (2/9)   Compressing objects:  33% (3/9)   Compressing objects:  44% (4/9)   Compressing objects:  55% (5/9)   Compressing objects:  66% (6/9)   Compressing objects:  77% (7/9)   Compressing objects:  88% (8/9)   Compressing objects: 100% (9/9)   Compressing objects: 100% (9/9), done.
+Writing objects:  10% (1/10)   Writing objects:  20% (2/10)   Writing objects:  30% (3/10)   Writing objects:  40% (4/10)   Writing objects:  50% (5/10)   Writing objects:  60% (6/10)   Writing objects:  70% (7/10)   Writing objects:  80% (8/10)   Writing objects:  90% (9/10)   Writing objects: 100% (10/10), 1.36 MiB | 2.70 MiB/s   Writing objects: 100% (10/10), 1.41 MiB | 2.34 MiB/s, done.
+Total 10 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas:   0% (0/4)   [Kremote: Resolving deltas:  25% (1/4)   [Kremote: Resolving deltas:  50% (2/4)   [Kremote: Resolving deltas:  75% (3/4)   [Kremote: Resolving deltas: 100% (4/4)   [Kremote: Resolving deltas: 100% (4/4), completed with 4 local objects.[K
+To https://github.com/c-ryan-jung/threaded_router
+   e226daf..655fce2  master -> master
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router[00m$ cd src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+works
+works
+Found 2 NFAs
+NFA: 0	./nfa-mode-w.txt
+INFO   graph.hpp:919:  NFA has 1 states.
+NFA: 1	./nfa-mode-waw.txt
+INFO   graph.hpp:919:  NFA has 3 states.
+Status.
+Status..
+Status...
+Status....
+works
+works
+Found 2 NFAs
+NFA: 0	./nfa-mode-w.txt
+INFO   graph.hpp:919:  NFA has 1 states.
+NFA: 1	./nfa-mode-waw.txt
+INFO   graph.hpp:919:  NFA has 3 states.
+Status.
+Status..
+Status...
+Status....
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd[K[Kcat plant[Ks.txt
+102	8	7	7	8	1000	2	1001	0	3	1002	0	4	1003	0	5	1004	0	6	1005	0	7	1006	0	
+100	8	7	5	8	1000	9	1002	3	10	1004	3	6	1006	3	7	1008	3	
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ../src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:296:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < core_count[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ..[K[K../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+works
+./script: line 3:  8978 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requests.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ make[K[K[K[Kcd ..
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router[00m$ make
+make: *** No targets specified and no makefile found.  Stop.
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router[00m$ cd ..
+]0;ryan@ryan-VirtualBox: ~/Bio[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio[00m$ cd 
+.git/            RE_Router/       threaded_router/ 
+]0;ryan@ryan-VirtualBox: ~/Bio[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio[00m$ cd 
+.git/            RE_Router/       threaded_router/ 
+]0;ryan@ryan-VirtualBox: ~/Bio[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio[00m$ cd threaded_router/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router[00m$ cd src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:296:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < core_count[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ../example
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+works
+working
+./script: line 3:  9011 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requests.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ../src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:296:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < core_count[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd.[K ../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ m[K./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+works
+working
+./script: line 3:  9045 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requests.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ../src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:296:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < core_count[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd e[K..ex
+bash: cd: ..ex: No such file or directory
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ,[Ksss[K[K[K./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+works
+working
+./script: line 3:  9353 Segmentation fault      (core dumped) ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f trip-requests.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ../src
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:289:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < big_list.size()[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:220:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ /[K./scro[Kipt
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ./planst=[K[K[K[K[K[K[K[K[Kcat plans.txt
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ls
+network-links.txt  network-nodes.txt  nfa_main.txt  nfa-mode-waw.txt  nfa-mode-w.txt  plans.txt  [0m[01;32mscript[0m  trip-requests.txt  typescript
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ make
+make: *** No targets specified and no makefile found.  Stop.
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd e[K../se[Krc/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ make
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m[K’:
+[01m[Kdijkstra.hpp:72:39:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around ‘[01m[K&&[m[K’ within ‘[01m[K||[m[K’ [[01;35m[K-Wparentheses[m[K]
+          [01;35m[Kv1.network() == v2.network() && v1.nfa() < v2.nfa()[m[K);
+          [01;35m[K~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:[m[K In function ‘[01m[Kint main(int, char**)[m[K’:
+[01m[Knew_main.cpp:290:21:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+   for(int i = 0 ; [01;35m[Ki < big_list.size()[m[K; i++){
+                   [01;35m[K~~^~~~~~~~~~~~~~~~~[m[K
+[01m[Knew_main.cpp:221:16:[m[K [01;35m[Kwarning: [m[Kvariable ‘[01m[Krequest[m[K’ set but not used [[01;35m[K-Wunused-but-set-variable[m[K]
+   Trip_Request [01;35m[Krequest[m[K;
+                [01;35m[K^~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:923:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K -
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kvirtual void Bi_Goal_Dijkstra::reconstruct_path(Plan&)[m[K’:
+[01m[Kdijkstra.hpp:1112:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Klink_dist_for[m[K’ may be used uninitialized in this function [[01;35m[K-Wmaybe-uninitialized[m[K]
+          [01;35m[Klink_dist_for + link_dist_back[m[K - curr_touched->dist()
+          [01;35m[K~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~[m[K
+g++ -O2 new_main.o  -L/home/ryan/lib -L/usr/local/lib -llog4cplus -lpthread -o new_main
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ ls
+basics.hpp  dijkstra.hpp  events.hpp  graph.hpp  Makefile  measurements.hpp  [0m[01;32mnew_main[0m  new_main.cpp  new_main.o  plans.txt  re-router.cpp  timer.hpp  tools.hpp  visualization.hpp
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ..ex[K[K/example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ ./script
+*** Standard Dijkstra
+Data:
+ network: network-links.txt
+ coords:  network-nodes.txt
+ NFA:     
+ NFAColl: nfa_main.txt
+INFO   graph.hpp:773:  Network has 10 vertices.
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ am[K[Km[Kcd ../src/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ cd ..e[K/example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ c[Kcd ../example/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/example[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/example[00m$ cd ../example/[4Psrc/
+]0;ryan@ryan-VirtualBox: ~/Bio/threaded_router/src[01;32mryan@ryan-VirtualBox[00m:[01;34m~/Bio/threaded_router/src[00m$ ls[K[Kam[K[Kmake
+g++ -c -g -Wall -O2 -I/home/ryan/include -I/usr/local/include new_main.cpp -o new_main.o
+In file included from [01m[K/usr/include/c++/7/ext/hash_map:60:0[m[K,
+                 from [01m[Kdijkstra.hpp:17[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[K/usr/include/c++/7/backward/backward_warning.h:32:2:[m[K [01;35m[Kwarning: [m[K#warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [[01;35m[K-Wcpp[m[K]
+ #[01;35m[Kwarning[m[K \
+  [01;35m[K^~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:81:1:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+ [01;35m[Kauto_ptr[m[K<Layout> myLayout =
+ [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Kdijkstra.hpp:19:0[m[K,
+                 from [01m[Knew_main.cpp:16[m[K:
+[01m[Kbasics.hpp:82:3:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktemplate<class> class std::auto_ptr[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   [01;35m[Kauto_ptr[m[K<Layout>(new PatternLayout("%-5p  %l:  %m%n"));
+   [01;35m[K^~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/7/memory:80:0[m[K,
+                 from [01m[K/usr/include/c++/7/thread:39[m[K,
+                 from [01m[Knew_main.cpp:13[m[K:
+[01m[K/usr/include/c++/7/bits/unique_ptr.h:51:28:[m[K [01;36m[Knote: [m[Kdeclared here
+   template<typename> class [01;36m[Kauto_ptr[m[K;
+                            [01;36m[K^~~~~~~~[m[K
+In file included from [01m[Knew_main.cpp:16:0[m[K:
+[01m[Kdijkstra.hpp:[m[K In member function ‘[01m[Kbool Product_Vertex_Lt::operator()(const Product_Vertex&, const Product_Vertex&) const[m

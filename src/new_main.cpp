@@ -147,13 +147,14 @@ void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips,
     router.find_path((Algorithm)algorithm, request_handler.request(), plan,
                      time_elapsed, trip_request.nfaID);
     
-    mtx.lock();
+    //mtx.lock();
     out_file << trip_request.id << '\t'
       << trip_request.source << '\t'
       << trip_request.destination << '\t';
 
     out_file << plan << endl;
-    mtx.unlock();
+    cout<< "arrived" << endl;
+    //mtx.unlock();
 
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
@@ -276,15 +277,8 @@ int main(int argc, char *argv[])
 
 
 
-  //splitting everything up into threads
-  cout << "works" << endl;
-  vector<Trip_Request> initial_v = request_handler.thread_request();
-  int trip_count = initial_v.size();
-  unsigned long const core_count = std::thread::hardware_concurrency();
-
-
-  unsigned long const per_thread = trip_count/core_count;
-  int start = 0;
+  //splitting everything up into threads  
+  vector<vector<Trip_Request>> big_list = request_handler.thread_request();
   vector<std::thread> threads;
 
   out_file.open(out_filename);
@@ -292,22 +286,22 @@ int main(int argc, char *argv[])
   {
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
-  }  
-  cout << "works" << endl;
-  for(int i = 0 ; i < core_count; i++){
-    cout << "works" << endl;
-    int end = per_thread + start;
-    vector<Trip_Request> thread_part(initial_v.begin() + start, initial_v.begin() + end);
-    threads[i] = std::thread(thread_method, std::ref(request_handler),thread_part, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-    start = end;
+  }
+  for(int i = 0 ; i < big_list.size(); i++){
+    threads[i] = std::thread(thread_method, std::ref(request_handler),big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
   }
   for(auto& entry:threads){
     entry.join();
   }
   //the start of the threaded method
-
-  //std::thread test(thread_method, std::ref(request_handler), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-  //test.join();
+  /* vector <Trip_Request> thing = request_handler.thread_request();
+  int half_size = thing.size()/2;
+  vector <Trip_Request> thing1(thing.begin(), thing.begin() + half_size);
+  vector <Trip_Request> thing2(thing.begin()+ half_size, thing.end());
+  std::thread test(thread_method, std::ref(request_handler), thing1, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+  std::thread test1(thread_method, std::ref(request_handler), thing2, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+  test.join();
+  test1.join();*/
 
   out_file.close();
 

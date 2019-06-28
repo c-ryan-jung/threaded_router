@@ -1,5 +1,7 @@
 #!/bin/bash
-
+cd src
+make clean
+cd ..
 read -r -p "Commit message: " desc
 git add .
 git add -u
