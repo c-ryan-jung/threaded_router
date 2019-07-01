@@ -150,7 +150,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
     double time_elapsed;
 
-    router.find_path((Algorithm)algorithm, request_handler.request(), plan,
+    router.find_path((Algorithm)algorithm, trip_request /* request_handler.request()*/, plan,
                      time_elapsed, trip_request.nfaID);
 
     cout << "gotcha" << endl;
