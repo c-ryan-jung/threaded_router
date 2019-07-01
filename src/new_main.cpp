@@ -281,13 +281,14 @@ int main(int argc, char *argv[])
   //splitting everything up into threads
   vector<vector<Trip_Request>> big_list = request_handler.thread_request();
   vector<std::thread> threads;
-  cout << "works" << endl;
+
   out_file.open(out_filename);
   if (!out_file)
   {
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
+  cout << "works" << endl;
   for (int i = 0; i < big_list.size(); i++)
   {
     threads[i] = std::thread(thread_method, pairs_filename, big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
