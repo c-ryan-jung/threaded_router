@@ -74,8 +74,11 @@ void print_usage()
 }
 
 //Threaded trip request processing
-void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(const char pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
+  Request_Handler request_handler;
+  request_handler.set_mode(FILE_PAIRS);
+  request_handler.set_stream(pairs_filename);
   cout << "works" << endl;
   vector<NFA_Graph *> nfaVector;
 
@@ -113,7 +116,7 @@ void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips,
       nfaVector.push_back(nfa);
     }
   }
-  
+
   cout << "Status." << endl;
 
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
@@ -135,7 +138,8 @@ void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips,
   vector<Trip_Request> trip_list = trips;
   cout << "Status...." << endl;
 
-  while(!trip_list.empty()){
+  while (!trip_list.empty())
+  {
     Trip_Request trip_request = trip_list.back();
 
     float distance = 0.0;
@@ -146,14 +150,14 @@ void thread_method(Request_Handler &request_handler, vector<Trip_Request> trips,
 
     router.find_path((Algorithm)algorithm, request_handler.request(), plan,
                      time_elapsed, trip_request.nfaID);
-    
+
     //mtx.lock();
     out_file << trip_request.id << '\t'
-      << trip_request.source << '\t'
-      << trip_request.destination << '\t';
+             << trip_request.source << '\t'
+             << trip_request.destination << '\t';
 
     out_file << plan << endl;
-    cout<< "arrived" << endl;
+    cout << "arrived" << endl;
     //mtx.unlock();
 
     bool error = false;
@@ -274,10 +278,7 @@ int main(int argc, char *argv[])
 
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
 
-
-
-
-  //splitting everything up into threads  
+  //splitting everything up into threads
   vector<vector<Trip_Request>> big_list = request_handler.thread_request();
   vector<std::thread> threads;
 
@@ -287,12 +288,14 @@ int main(int argc, char *argv[])
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-  for(int i = 0 ; i < big_list.size(); i++){
-    threads[i] = std::thread(thread_method, std::ref(request_handler),big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+  for (int i = 0; i < big_list.size(); i++)
+  {
+    threads[i] = std::thread(thread_method, pairs_filename, big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
     threads[i];
   }
 
-  for(auto& entry:threads){
+  for (auto &entry : threads)
+  {
     entry.join();
   }
   //the start of the threaded method

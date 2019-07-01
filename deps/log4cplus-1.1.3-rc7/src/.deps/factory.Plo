@@ -1,267 +1,216 @@
 factory.lo: factory.cxx ../include/log4cplus/spi/factory.h \
-  ../include/log4cplus/config.hxx \
-  ../include/log4cplus/config/defines.hxx \
-  ../include/log4cplus/helpers/thread-config.h \
-  ../include/log4cplus/appender.h ../include/log4cplus/layout.h \
-  ../include/log4cplus/loglevel.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wchar.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/cdefs.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_symbol_aliasing.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_posix_availability.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Availability.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/AvailabilityInternal.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_null.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_size_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mbstate_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int8_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int16_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int32_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int64_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int8_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int16_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int32_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int64_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_intptr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uintptr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ct_rune_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rune_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wchar_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stdarg.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdio.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_stdio.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_va_list.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stdio.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_off_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ssize_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/time.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_clock_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_time_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timespec.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/__wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wint_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctype_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/ctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/runetype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stddef.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/string.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rsize_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_errno_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/strings.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stdint.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdint.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint8_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint16_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint32_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint64_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_intmax_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uintmax_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_pid_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_id_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/signal.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/appleapiopts.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/signal.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/signal.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_mcontext.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_mcontext.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/machine/_structs.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/i386/_structs.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_attr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigaltstack.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ucontext.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigset_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uid_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timeval.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/endian.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_endian.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/_OSByteOrder.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/i386/_OSByteOrder.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/alloca.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_dev_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mode_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base_03 \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_limits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/syslimits.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer \
-  ../include/log4cplus/tstring.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctrans_t.h \
-  ../include/log4cplus/tchar.h ../include/log4cplus/streams.h \
-  ../include/log4cplus/helpers/pointer.h \
-  ../include/log4cplus/thread/syncprims.h \
-  ../include/log4cplus/spi/filter.h \
-  ../include/log4cplus/helpers/lockfile.h \
-  ../include/log4cplus/spi/objectregistry.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_03 \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__locale \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__mutex_base \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/chrono \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctime \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ratio \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/system_error \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cerrno \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/errno.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/errno.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/errno.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__threading_support \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/pthread_impl.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/sched.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread_impl.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_cond_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_key_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_once_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/qos.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/qos.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mach_port_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sched.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/locale.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_locale.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_xlocale.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_ctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/__wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdio.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdlib.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_string.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_time.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wchar.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wctype.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ios \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/streambuf \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/nl_types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/types.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_char.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_short.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_caddr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blkcnt_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blksize_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_gid_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_addr_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_port_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino64_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_key_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_nlink_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_useconds_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_suseconds_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_def.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_setsize.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_set.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_clr.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_zero.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_isset.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_copy.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsblkcnt_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsfilcnt_t.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_nl_item.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bsd_locale_defaults.h \
-  ../include/log4cplus/spi/loggerfactory.h \
-  ../include/log4cplus/helpers/loglog.h \
-  ../include/log4cplus/helpers/property.h \
-  ../include/log4cplus/asyncappender.h \
-  ../include/log4cplus/helpers/queue.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/deque \
-  ../include/log4cplus/spi/loggingevent.h ../include/log4cplus/ndc.h \
-  ../include/log4cplus/mdc.h ../include/log4cplus/helpers/timehelper.h \
-  ../include/log4cplus/thread/threads.h \
-  ../include/log4cplus/helpers/appenderattachableimpl.h \
-  ../include/log4cplus/spi/appenderattachable.h \
-  ../include/log4cplus/consoleappender.h \
-  ../include/log4cplus/fileappender.h ../include/log4cplus/fstreams.h \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/fstream \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ostream \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bitset \
-  /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/istream \
-  ../include/log4cplus/nteventlogappender.h \
-  ../include/log4cplus/nullappender.h \
-  ../include/log4cplus/socketappender.h \
-  ../include/log4cplus/helpers/socket.h \
-  ../include/log4cplus/helpers/socketbuffer.h \
-  ../include/log4cplus/syslogappender.h \
-  ../include/log4cplus/win32debugappender.h \
-  ../include/log4cplus/win32consoleappender.h \
-  ../include/log4cplus/log4judpappender.h
+ ../include/log4cplus/config.hxx ../include/log4cplus/config/win32.h \
+ c:\mingw\include\_mingw.h c:\mingw\include\msvcrtver.h \
+ c:\mingw\include\w32api.h c:\mingw\include\sdkddkver.h \
+ ../include/log4cplus/helpers/thread-config.h \
+ ../include/log4cplus/appender.h ../include/log4cplus/layout.h \
+ ../include/log4cplus/loglevel.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algobase.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\cpu_defines.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functexcept.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_defines.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cpp_type_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\type_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\numeric_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_pair.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\move.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\concept_check.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\type_traits \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_types.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_funcs.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\assertions.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ptr_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\debug.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\predefined_ops.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++allocator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\new_allocator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\new \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\exception \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_lockfree_defines.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_ptr.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\nested_exception.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\memoryfwd.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_construct.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\alloc_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\alloc_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_uninitialized.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\initializer_list \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functional_hash.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hash_bytes.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
+ ../include/log4cplus/tstring.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\char_traits.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar \
+ c:\mingw\include\wchar.h c:\mingw\include\wctype.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\stddef.h \
+ c:\mingw\include\sys\types.h c:\mingw\include\stdio.h \
+ c:\mingw\include\sys/types.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
+ c:\mingw\include\stdlib.h c:\mingw\include\direct.h \
+ c:\mingw\include\sys/stat.h c:\mingw\include\io.h \
+ c:\mingw\include\stdint.h c:\mingw\include\time.h \
+ c:\mingw\include\locale.h c:\mingw\include\process.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdint \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \
+ c:\mingw\include\stdint.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\localefwd.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++locale.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\clocale \
+ c:\mingw\include\locale.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iosfwd \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cctype \
+ c:\mingw\include\ctype.h c:\mingw\include\wctype.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream_insert.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cxxabi_forced.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_function.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\binders.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\atomicity.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr-default.h \
+ c:\mingw\include\errno.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\atomic_word.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\string_conversions.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdlib \
+ c:\mingw\include\stdlib.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdio \
+ c:\mingw\include\stdio.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cerrno \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc \
+ ../include/log4cplus/tchar.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef \
+ ../include/log4cplus/streams.h ../include/log4cplus/helpers/pointer.h \
+ ../include/log4cplus/thread/syncprims.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\algorithm \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\utility \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_relops.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algo.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\algorithmfwd.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_heap.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tempbuf.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uniform_int_dist.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\limits \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert \
+ c:\mingw\include\assert.h ../include/log4cplus/spi/filter.h \
+ ../include/log4cplus/helpers/lockfile.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\memory \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_raw_storage_iter.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\typeinfo \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\concurrence.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uses_allocator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\functional \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\tuple \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\array \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdexcept \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocated_ptr.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\aligned_buffer.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_atomic.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h \
+ ../include/log4cplus/spi/objectregistry.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\map \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tree.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_map.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_multimap.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\locale \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwctype \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\error_constants.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\streambuf \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf_iterator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_inline.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets_nonio.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime c:\mingw\include\time.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\time_members.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\messages_members.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\codecvt.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets_nonio.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_conv.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\codecvt.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h \
+ ../include/log4cplus/spi/loggerfactory.h \
+ ../include/log4cplus/helpers/loglog.h \
+ ../include/log4cplus/helpers/property.h \
+ ../include/log4cplus/asyncappender.h \
+ ../include/log4cplus/helpers/queue.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\deque \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_deque.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\deque.tcc \
+ ../include/log4cplus/spi/loggingevent.h ../include/log4cplus/ndc.h \
+ ../include/log4cplus/mdc.h ../include/log4cplus/helpers/timehelper.h \
+ ../include/log4cplus/thread/threads.h \
+ ../include/log4cplus/helpers/appenderattachableimpl.h \
+ ../include/log4cplus/spi/appenderattachable.h \
+ ../include/log4cplus/consoleappender.h \
+ ../include/log4cplus/fileappender.h ../include/log4cplus/fstreams.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\fstream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\basic_file.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++io.h \
+ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\fstream.tcc \
+ ../include/log4cplus/nteventlogappender.h \
+ ../include/log4cplus/config/windowsh-inc.h c:\mingw\include\winsock2.h \
+ c:\mingw\include\windows.h c:\mingw\include\windef.h \
+ c:\mingw\include\winnt.h c:\mingw\include\winerror.h \
+ c:\mingw\include\string.h c:\mingw\include\strings.h \
+ c:\mingw\include\wchar.h c:\mingw\include\basetsd.h \
+ c:\mingw\include\pshpack4.h c:\mingw\include\poppack.h \
+ c:\mingw\include\wincon.h c:\mingw\include\winbase.h \
+ c:\mingw\include\winuser.h c:\mingw\include\dbt.h \
+ c:\mingw\include\winnls.h c:\mingw\include\winver.h \
+ c:\mingw\include\winnetwk.h c:\mingw\include\winreg.h \
+ c:\mingw\include\winsvc.h c:\mingw\include\ws2tcpip.h \
+ ../include/log4cplus/nullappender.h \
+ ../include/log4cplus/socketappender.h \
+ ../include/log4cplus/helpers/socket.h \
+ ../include/log4cplus/helpers/socketbuffer.h \
+ ../include/log4cplus/syslogappender.h \
+ ../include/log4cplus/win32debugappender.h \
+ ../include/log4cplus/win32consoleappender.h \
+ ../include/log4cplus/log4judpappender.h
 
 ../include/log4cplus/spi/factory.h:
 
 ../include/log4cplus/config.hxx:
 
-../include/log4cplus/config/defines.hxx:
+../include/log4cplus/config/win32.h:
+
+c:\mingw\include\_mingw.h:
+
+c:\mingw\include\msvcrtver.h:
+
+c:\mingw\include\w32api.h:
+
+c:\mingw\include\sdkddkver.h:
 
 ../include/log4cplus/helpers/thread-config.h:
 
@@ -271,293 +220,189 @@ factory.lo: factory.cxx ../include/log4cplus/spi/factory.h \
 
 ../include/log4cplus/loglevel.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/vector:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__config:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algobase.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iosfwd:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wchar.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wchar.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\cpu_defines.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functexcept.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_defines.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/cdefs.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cpp_type_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_symbol_aliasing.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\type_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_posix_availability.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\numeric_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_pair.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\move.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\concept_check.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/Availability.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\type_traits:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/AvailabilityInternal.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_types.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_null.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_funcs.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_size_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\assertions.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mbstate_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ptr_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/types.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\debug.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int8_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\predefined_ops.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int16_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int32_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++allocator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_int64_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\new_allocator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int8_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\new:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int16_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\exception:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int32_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_lockfree_defines.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int64_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_ptr.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_intptr_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\nested_exception.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uintptr_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\memoryfwd.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ct_rune_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_construct.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rune_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\alloc_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wchar_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\alloc_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stdarg.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_uninitialized.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdio.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdio.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\initializer_list:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_stdio.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_va_list.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functional_hash.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/stdio.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hash_bytes.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_off_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ssize_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/time.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_clock_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_time_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timespec.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_wctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/__wctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_wint_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctype_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/ctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_ctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/runetype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bit_reference:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/algorithm:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/initializer_list:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstddef:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stddef.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__nullptr:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/type_traits:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstring:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/string.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_rsize_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_errno_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/strings.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/utility:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tuple:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdint:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdint.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/stdint.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdint.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint8_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint16_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint32_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uint64_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_intmax_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_uintmax_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__debug:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/memory:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/typeinfo:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/exception:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdlib:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdlib.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/stdlib.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/wait.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_pid_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_id_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/signal.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/appleapiopts.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/signal.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/signal.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/_mcontext.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_mcontext.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/machine/_structs.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/mach/i386/_structs.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_attr_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigaltstack.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ucontext.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_sigset_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_uid_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/resource.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_timeval.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/endian.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/endian.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_endian.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/_OSByteOrder.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/libkern/i386/_OSByteOrder.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/alloca.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/malloc/_malloc.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_dev_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mode_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/new:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__undef_macros:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/iterator:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_base_03:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/tuple:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/stdexcept:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cassert:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/assert.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/atomic:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/climits:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/10.0.0/include/limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/machine/limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/i386/_limits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/syslimits.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__split_buffer:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc:
 
 ../include/log4cplus/tstring.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/string_view:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__string:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\char_traits.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cstdio:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwchar:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cwctype:
+c:\mingw\include\wchar.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cctype:
+c:\mingw\include\wctype.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/wctype.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\stddef.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/wctype.h:
+c:\mingw\include\sys\types.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_wctrans_t.h:
+c:\mingw\include\stdio.h:
+
+c:\mingw\include\sys/types.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h:
+
+c:\mingw\include\stdlib.h:
+
+c:\mingw\include\direct.h:
+
+c:\mingw\include\sys/stat.h:
+
+c:\mingw\include\io.h:
+
+c:\mingw\include\stdint.h:
+
+c:\mingw\include\time.h:
+
+c:\mingw\include\locale.h:
+
+c:\mingw\include\process.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdint:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h:
+
+c:\mingw\include\stdint.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\localefwd.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++locale.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\clocale:
+
+c:\mingw\include\locale.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iosfwd:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cctype:
+
+c:\mingw\include\ctype.h:
+
+c:\mingw\include\wctype.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream_insert.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cxxabi_forced.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_function.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\binders.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\atomicity.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr-default.h:
+
+c:\mingw\include\errno.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\atomic_word.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\string_conversions.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdlib:
+
+c:\mingw\include\stdlib.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdio:
+
+c:\mingw\include\stdio.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cerrno:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc:
 
 ../include/log4cplus/tchar.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef:
 
 ../include/log4cplus/streams.h:
 
@@ -565,165 +410,127 @@ factory.lo: factory.cxx ../include/log4cplus/spi/factory.h \
 
 ../include/log4cplus/thread/syncprims.h:
 
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\algorithm:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\utility:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_relops.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algo.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\algorithmfwd.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_heap.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tempbuf.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uniform_int_dist.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\limits:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert:
+
+c:\mingw\include\assert.h:
+
 ../include/log4cplus/spi/filter.h:
 
 ../include/log4cplus/helpers/lockfile.h:
 
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\memory:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_raw_storage_iter.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\typeinfo:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\concurrence.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uses_allocator.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\functional:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\tuple:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\array:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdexcept:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_base.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocated_ptr.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\aligned_buffer.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_atomic.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_base.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h:
+
 ../include/log4cplus/spi/objectregistry.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/map:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\map:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__tree:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tree.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/functional:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_map.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__functional_03:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_multimap.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\locale:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__locale:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/mutex:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_classes.tcc:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__mutex_base:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/chrono:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwctype:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ctime:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_base.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ratio:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ios_base.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/system_error:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\system_error:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/cerrno:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\error_constants.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/errno.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\streambuf:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/errno.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf.tcc:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/errno.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\streambuf_iterator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__threading_support:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\ctype_inline.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets.tcc:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/pthread_impl.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets_nonio.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/sched.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread_impl.h:
+c:\mingw\include\time.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\time_members.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\messages_members.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_key_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\codecvt.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_facets_nonio.tcc:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\locale_conv.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\codecvt.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_pthread/_pthread_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/pthread/qos.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/qos.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_mach_port_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sched.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/locale.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/locale.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_locale.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_xlocale.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_ctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/__wctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdio.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_stdlib.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_string.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_time.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wchar.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/xlocale/_wctype.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ios:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/streambuf:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/nl_types.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/types.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_char.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_short.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_u_int.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_caddr_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blkcnt_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_blksize_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_gid_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_addr_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_in_port_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_ino64_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_key_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_nlink_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_useconds_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_suseconds_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_def.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_setsize.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_set.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_clr.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_zero.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_isset.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fd_copy.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk/usr/include/_types/_nl_item.h:
-
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/__bsd_locale_defaults.h:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h:
 
 ../include/log4cplus/spi/loggerfactory.h:
 
@@ -735,7 +542,11 @@ factory.lo: factory.cxx ../include/log4cplus/spi/factory.h \
 
 ../include/log4cplus/helpers/queue.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/deque:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\deque:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_deque.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\deque.tcc:
 
 ../include/log4cplus/spi/loggingevent.h:
 
@@ -757,15 +568,73 @@ factory.lo: factory.cxx ../include/log4cplus/spi/factory.h \
 
 ../include/log4cplus/fstreams.h:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/fstream:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\fstream:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/ostream:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\istream:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/bitset:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ios:
 
-/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1/istream:
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_ios.tcc:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ostream:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream.tcc:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\istream.tcc:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\basic_file.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++io.h:
+
+c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\fstream.tcc:
 
 ../include/log4cplus/nteventlogappender.h:
+
+../include/log4cplus/config/windowsh-inc.h:
+
+c:\mingw\include\winsock2.h:
+
+c:\mingw\include\windows.h:
+
+c:\mingw\include\windef.h:
+
+c:\mingw\include\winnt.h:
+
+c:\mingw\include\winerror.h:
+
+c:\mingw\include\string.h:
+
+c:\mingw\include\strings.h:
+
+c:\mingw\include\wchar.h:
+
+c:\mingw\include\basetsd.h:
+
+c:\mingw\include\pshpack4.h:
+
+c:\mingw\include\poppack.h:
+
+c:\mingw\include\wincon.h:
+
+c:\mingw\include\winbase.h:
+
+c:\mingw\include\winuser.h:
+
+c:\mingw\include\dbt.h:
+
+c:\mingw\include\winnls.h:
+
+c:\mingw\include\winver.h:
+
+c:\mingw\include\winnetwk.h:
+
+c:\mingw\include\winreg.h:
+
+c:\mingw\include\winsvc.h:
+
+c:\mingw\include\ws2tcpip.h:
 
 ../include/log4cplus/nullappender.h:
 

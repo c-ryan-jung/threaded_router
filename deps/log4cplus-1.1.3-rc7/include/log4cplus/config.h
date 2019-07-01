@@ -26,10 +26,10 @@
 #define HAVE_DLFCN_H 1
 
 /* Define to 1 if you have the `fcntl' function. */
-#define HAVE_FCNTL 1
+/* #undef HAVE_FCNTL */
 
 /* Define to 1 if you have the `flock' function. */
-#define HAVE_FLOCK 1
+/* #undef HAVE_FLOCK */
 
 /* Define to 1 if you have the `ftime' function. */
 #define HAVE_FTIME 1
@@ -38,7 +38,7 @@
 #define HAVE_FUNC_ATTRIBUTE_CONSTRUCTOR 1
 
 /* */
-#define HAVE_GETADDRINFO 1
+/* #undef HAVE_GETADDRINFO */
 
 /* */
 /* #undef HAVE_GETHOSTBYNAME_R */
@@ -50,13 +50,13 @@
 #define HAVE_GETTIMEOFDAY 1
 
 /* Define to 1 if you have the `gmtime_r' function. */
-#define HAVE_GMTIME_R 1
+/* #undef HAVE_GMTIME_R */
 
 /* Define to 1 if you have the `htonl' function. */
-#define HAVE_HTONL 1
+/* #undef HAVE_HTONL */
 
 /* Define to 1 if you have the `htons' function. */
-#define HAVE_HTONS 1
+/* #undef HAVE_HTONS */
 
 /* Define to 1 if you have the `iconv' function. */
 /* #undef HAVE_ICONV */
@@ -71,7 +71,7 @@
 #define HAVE_INTTYPES_H 1
 
 /* Define to 1 if you have the `advapi32' library (-ladvapi32). */
-/* #undef HAVE_LIBADVAPI32 */
+#define HAVE_LIBADVAPI32 1
 
 /* Define to 1 if you have the `libiconv' function. */
 /* #undef HAVE_LIBICONV */
@@ -83,19 +83,19 @@
 /* #undef HAVE_LIBICONV_OPEN */
 
 /* Define to 1 if you have the `kernel32' library (-lkernel32). */
-/* #undef HAVE_LIBKERNEL32 */
+#define HAVE_LIBKERNEL32 1
 
 /* Define to 1 if you have the `ws2_32' library (-lws2_32). */
-/* #undef HAVE_LIBWS2_32 */
+#define HAVE_LIBWS2_32 1
 
 /* Define to 1 if you have the `localtime_r' function. */
-#define HAVE_LOCALTIME_R 1
+/* #undef HAVE_LOCALTIME_R */
 
 /* Define to 1 if you have the `lockf' function. */
-#define HAVE_LOCKF 1
+/* #undef HAVE_LOCKF */
 
 /* Define to 1 if you have the `lstat' function. */
-#define HAVE_LSTAT 1
+/* #undef HAVE_LSTAT */
 
 /* Define to 1 if you have the `mbstowcs' function. */
 #define HAVE_MBSTOWCS 1
@@ -107,28 +107,28 @@
 #define HAVE_NANOSLEEP 1
 
 /* Define to 1 if you have the `ntohl' function. */
-#define HAVE_NTOHL 1
+/* #undef HAVE_NTOHL */
 
 /* Define to 1 if you have the `ntohs' function. */
-#define HAVE_NTOHS 1
+/* #undef HAVE_NTOHS */
 
 /* Define to 1 if you have the `pipe' function. */
-#define HAVE_PIPE 1
+/* #undef HAVE_PIPE */
 
 /* Define to 1 if you have the `pipe2' function. */
 /* #undef HAVE_PIPE2 */
 
 /* Define to 1 if you have the `poll' function. */
-#define HAVE_POLL 1
+/* #undef HAVE_POLL */
 
 /* Define if you have POSIX threads libraries and header files. */
-#define HAVE_PTHREAD 1
+/* #undef HAVE_PTHREAD */
 
 /* Have PTHREAD_PRIO_INHERIT. */
-#define HAVE_PTHREAD_PRIO_INHERIT 1
+/* #undef HAVE_PTHREAD_PRIO_INHERIT */
 
 /* Define to 1 if you have the `shutdown' function. */
-#define HAVE_SHUTDOWN 1
+/* #undef HAVE_SHUTDOWN */
 
 /* Define to 1 if you have the `stat' function. */
 #define HAVE_STAT 1
@@ -162,34 +162,34 @@
 #define HAVE_VAR_ATTRIBUTE_INIT_PRIORITY 1
 
 /* Define to 1 if you have the `vfprintf_s' function. */
-/* #undef HAVE_VFPRINTF_S */
+#define HAVE_VFPRINTF_S 1
 
 /* Define to 1 if you have the `vfwprintf_s' function. */
-/* #undef HAVE_VFWPRINTF_S */
+#define HAVE_VFWPRINTF_S 1
 
 /* Define to 1 if you have the `vsnprintf' function. */
 #define HAVE_VSNPRINTF 1
 
 /* Define to 1 if you have the `vsnwprintf' function. */
-/* #undef HAVE_VSNWPRINTF */
+#define HAVE_VSNWPRINTF 1
 
 /* Define to 1 if you have the `vsprintf_s' function. */
-/* #undef HAVE_VSPRINTF_S */
+#define HAVE_VSPRINTF_S 1
 
 /* Define to 1 if you have the `vswprintf_s' function. */
-/* #undef HAVE_VSWPRINTF_S */
+#define HAVE_VSWPRINTF_S 1
 
 /* Define to 1 if you have the `wcstombs' function. */
 #define HAVE_WCSTOMBS 1
 
 /* Define to 1 if you have the `_vsnprintf_s' function. */
-/* #undef HAVE__VSNPRINTF_S */
+#define HAVE__VSNPRINTF_S 1
 
 /* Define to 1 if you have the `_vsnwprintf' function. */
-/* #undef HAVE__VSNWPRINTF */
+#define HAVE__VSNWPRINTF 1
 
 /* Define to 1 if you have the `_vsnwprintf_s' function. */
-/* #undef HAVE__VSNWPRINTF_S */
+#define HAVE__VSNWPRINTF_S 1
 
 /* Defined if the compiler supports __FUNCTION__ macro. */
 /* #undef HAVE___FUNCTION___MACRO */
@@ -211,18 +211,18 @@
 
 /* Defined if the compiler understands __declspec(dllimport) or
    __attribute__((visibility("default"))) or __global construct. */
-#define LOG4CPLUS_DECLSPEC_EXPORT __attribute__ ((visibility("default")))
+#define LOG4CPLUS_DECLSPEC_EXPORT __declspec(dllexport)
 
 /* Defined if the compiler understands __declspec(dllimport) or
    __attribute__((visibility("default"))) or __global construct. */
-#define LOG4CPLUS_DECLSPEC_IMPORT __attribute__ ((visibility("default")))
+#define LOG4CPLUS_DECLSPEC_IMPORT __declspec(dllimport)
 
 /* Defined if the compiler understands __attribute__((visibility("hidden")))
    or __hidden construct. */
-#define LOG4CPLUS_DECLSPEC_PRIVATE __attribute__ ((visibility("hidden")))
+#define LOG4CPLUS_DECLSPEC_PRIVATE /* empty */
 
 /* */
-#define LOG4CPLUS_HAVE_ARPA_INET_H 1
+/* #undef LOG4CPLUS_HAVE_ARPA_INET_H */
 
 /* */
 #define LOG4CPLUS_HAVE_C99_VARIADIC_MACROS 1
@@ -243,13 +243,13 @@
 #define LOG4CPLUS_HAVE_ERRNO_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_FCNTL 1
+/* #undef LOG4CPLUS_HAVE_FCNTL */
 
 /* */
 #define LOG4CPLUS_HAVE_FCNTL_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_FLOCK 1
+/* #undef LOG4CPLUS_HAVE_FLOCK */
 
 /* */
 #define LOG4CPLUS_HAVE_FTIME 1
@@ -264,7 +264,7 @@
 #define LOG4CPLUS_HAVE_FUNC_SYMBOL 1
 
 /* */
-#define LOG4CPLUS_HAVE_GETADDRINFO 1
+/* #undef LOG4CPLUS_HAVE_GETADDRINFO */
 
 /* */
 /* #undef LOG4CPLUS_HAVE_GETHOSTBYNAME_R */
@@ -273,22 +273,22 @@
 #define LOG4CPLUS_HAVE_GETPID 1
 
 /* */
-#define LOG4CPLUS_HAVE_GETTID 1
+/* #undef LOG4CPLUS_HAVE_GETTID */
 
 /* */
 #define LOG4CPLUS_HAVE_GETTIMEOFDAY 1
 
 /* */
-#define LOG4CPLUS_HAVE_GMTIME_R 1
+/* #undef LOG4CPLUS_HAVE_GMTIME_R */
 
 /* */
 #define LOG4CPLUS_HAVE_GNU_VARIADIC_MACROS 1
 
 /* */
-#define LOG4CPLUS_HAVE_HTONL 1
+/* #undef LOG4CPLUS_HAVE_HTONL */
 
 /* */
-#define LOG4CPLUS_HAVE_HTONS 1
+/* #undef LOG4CPLUS_HAVE_HTONS */
 
 /* */
 /* #undef LOG4CPLUS_HAVE_ICONV */
@@ -306,13 +306,13 @@
 #define LOG4CPLUS_HAVE_LIMITS_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_LOCALTIME_R 1
+/* #undef LOG4CPLUS_HAVE_LOCALTIME_R */
 
 /* */
-#define LOG4CPLUS_HAVE_LOCKF 1
+/* #undef LOG4CPLUS_HAVE_LOCKF */
 
 /* */
-#define LOG4CPLUS_HAVE_LSTAT 1
+/* #undef LOG4CPLUS_HAVE_LSTAT */
 
 /* */
 #define LOG4CPLUS_HAVE_MBSTOWCS 1
@@ -321,37 +321,37 @@
 #define LOG4CPLUS_HAVE_NANOSLEEP 1
 
 /* */
-#define LOG4CPLUS_HAVE_NETDB_H 1
+/* #undef LOG4CPLUS_HAVE_NETDB_H */
 
 /* */
-#define LOG4CPLUS_HAVE_NETINET_IN_H 1
+/* #undef LOG4CPLUS_HAVE_NETINET_IN_H */
 
 /* */
-#define LOG4CPLUS_HAVE_NETINET_TCP_H 1
+/* #undef LOG4CPLUS_HAVE_NETINET_TCP_H */
 
 /* */
-#define LOG4CPLUS_HAVE_NTOHL 1
+/* #undef LOG4CPLUS_HAVE_NTOHL */
 
 /* */
-#define LOG4CPLUS_HAVE_NTOHS 1
+/* #undef LOG4CPLUS_HAVE_NTOHS */
 
 /* */
-#define LOG4CPLUS_HAVE_PIPE 1
+/* #undef LOG4CPLUS_HAVE_PIPE */
 
 /* */
 /* #undef LOG4CPLUS_HAVE_PIPE2 */
 
 /* */
-#define LOG4CPLUS_HAVE_POLL 1
+/* #undef LOG4CPLUS_HAVE_POLL */
 
 /* */
-#define LOG4CPLUS_HAVE_POLL_H 1
+/* #undef LOG4CPLUS_HAVE_POLL_H */
 
 /* */
 #define LOG4CPLUS_HAVE_PRETTY_FUNCTION_MACRO 1
 
 /* */
-#define LOG4CPLUS_HAVE_SHUTDOWN 1
+/* #undef LOG4CPLUS_HAVE_SHUTDOWN */
 
 /* */
 #define LOG4CPLUS_HAVE_STAT 1
@@ -366,19 +366,19 @@
 #define LOG4CPLUS_HAVE_STDLIB_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_SYSLOG_H 1
+/* #undef LOG4CPLUS_HAVE_SYSLOG_H */
 
 /* */
 #define LOG4CPLUS_HAVE_SYS_FILE_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_SYS_SOCKET_H 1
+/* #undef LOG4CPLUS_HAVE_SYS_SOCKET_H */
 
 /* */
 #define LOG4CPLUS_HAVE_SYS_STAT_H 1
 
 /* */
-#define LOG4CPLUS_HAVE_SYS_SYSCALL_H 1
+/* #undef LOG4CPLUS_HAVE_SYS_SYSCALL_H */
 
 /* */
 #define LOG4CPLUS_HAVE_SYS_TIMEB_H 1
@@ -402,22 +402,22 @@
 #define LOG4CPLUS_HAVE_VAR_ATTRIBUTE_INIT_PRIORITY 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_VFPRINTF_S */
+#define LOG4CPLUS_HAVE_VFPRINTF_S 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_VFWPRINTF_S */
+#define LOG4CPLUS_HAVE_VFWPRINTF_S 1
 
 /* */
 #define LOG4CPLUS_HAVE_VSNPRINTF 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_VSNWPRINTF */
+#define LOG4CPLUS_HAVE_VSNWPRINTF 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_VSPRINTF_S */
+#define LOG4CPLUS_HAVE_VSPRINTF_S 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_VSWPRINTF_S */
+#define LOG4CPLUS_HAVE_VSWPRINTF_S 1
 
 /* */
 #define LOG4CPLUS_HAVE_WCHAR_H 1
@@ -426,13 +426,13 @@
 #define LOG4CPLUS_HAVE_WCSTOMBS 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE__VSNPRINTF_S */
+#define LOG4CPLUS_HAVE__VSNPRINTF_S 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE__VSNWPRINTF */
+#define LOG4CPLUS_HAVE__VSNWPRINTF 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE__VSNWPRINTF_S */
+#define LOG4CPLUS_HAVE__VSNWPRINTF_S 1
 
 /* */
 #define LOG4CPLUS_HAVE___SYNC_ADD_AND_FETCH 1
@@ -444,7 +444,7 @@
 /* #undef LOG4CPLUS_SINGLE_THREADED */
 
 /* */
-#define LOG4CPLUS_THREAD_LOCAL_VAR __thread
+#define LOG4CPLUS_THREAD_LOCAL_VAR thread_local
 
 /* */
 /* #undef LOG4CPLUS_USE_PTHREADS */
@@ -490,9 +490,9 @@
 #define STDC_HEADERS 1
 
 /* Defined to the actual TLS support construct. */
-#define TLS_SUPPORT_CONSTRUCT __thread
+#define TLS_SUPPORT_CONSTRUCT thread_local
 
 /* Substitute for socklen_t */
-/* #undef socklen_t */
+#define socklen_t int
 
 #endif // LOG4CPLUS_CONFIG_H
