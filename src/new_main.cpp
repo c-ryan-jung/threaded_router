@@ -168,9 +168,9 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
     if (error)
       LOG4CPLUS_ERROR(main_logger, error_message);
-    trip_list.pop_back();
     cout << "working" << endl;
-  }
+    trip_list.pop_back();
+    }
   /* while (!request_handler.finished())
   {
     Trip_Request trip_request = request_handler.request();
