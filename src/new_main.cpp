@@ -151,14 +151,14 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     router.find_path((Algorithm)algorithm, request_handler.request(), plan,
                      time_elapsed, trip_request.nfaID);
 
-    //mtx.lock();
+    mtx.lock();
     out_file << trip_request.id << '\t'
              << trip_request.source << '\t'
              << trip_request.destination << '\t';
 
     out_file << plan << endl;
     cout << "arrived" << endl;
-    //mtx.unlock();
+    mtx.unlock();
 
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
@@ -168,9 +168,9 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
     if (error)
       LOG4CPLUS_ERROR(main_logger, error_message);
-    cout << "working" << endl;
+
     trip_list.pop_back();
-    }
+  }
   /* while (!request_handler.finished())
   {
     Trip_Request trip_request = request_handler.request();
