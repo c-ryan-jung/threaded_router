@@ -74,7 +74,7 @@ void print_usage()
 }
 
 //Threaded trip request processing
-void thread_method(const char pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
