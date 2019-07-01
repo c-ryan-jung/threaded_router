@@ -288,9 +288,10 @@ int main(int argc, char *argv[])
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-  cout << "works" << endl;
+
   for (int i = 0; i < big_list.size(); i++)
   {
+    cout << "works" << endl;
     threads[i] = std::thread(thread_method, pairs_filename, big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
     threads[i];
   }
