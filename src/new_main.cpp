@@ -291,10 +291,8 @@ int main(int argc, char *argv[])
 
   for (int i = 0; i < big_list.size(); i++)
   {
-
-    threads[i] = std::thread(thread_method, pairs_filename, big_list[i], plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-    cout << "works" << endl;
-    threads[i];
+    //current problem
+    threads[i] = std::thread(thread_method, pairs_filename, std::ref(big_list[i]), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
   }
 
   for (auto &entry : threads)
