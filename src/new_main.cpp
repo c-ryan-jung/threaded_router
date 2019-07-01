@@ -88,7 +88,6 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   }
   else
   {
-    cout << "works" << endl;
     ifstream file(nfa_collection_filename);
 
     if (!file)
@@ -145,7 +144,6 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     float distance = 0.0;
 
     plan.path.clear();
-    cout << "working" << endl;
     event_handler.clear();
 
     double time_elapsed;
@@ -153,15 +151,13 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     router.find_path((Algorithm)algorithm, trip_request /* request_handler.request()*/, plan,
                      time_elapsed, trip_request.nfaID);
 
-    cout << "gotcha" << endl;
-    mtx.lock();
+    //mtx.lock();
     out_file << trip_request.id << '\t'
              << trip_request.source << '\t'
              << trip_request.destination << '\t';
 
     out_file << plan << endl;
-    cout << "arrived" << endl;
-    mtx.unlock();
+    //mtx.unlock();
 
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
