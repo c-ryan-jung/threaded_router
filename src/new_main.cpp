@@ -147,12 +147,13 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     plan.path.clear();
     cout << "working" << endl;
     event_handler.clear();
+    cout << "gotcha" << endl;
     double time_elapsed;
 
     router.find_path((Algorithm)algorithm, request_handler.request(), plan,
                      time_elapsed, trip_request.nfaID);
 
-        mtx.lock();
+    mtx.lock();
     out_file << trip_request.id << '\t'
              << trip_request.source << '\t'
              << trip_request.destination << '\t';
