@@ -79,7 +79,6 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
-  cout << "works" << endl;
   vector<NFA_Graph *> nfaVector;
 
   if (singleNFA == 1)
@@ -140,7 +139,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
   while (!trip_list.empty())
   {
-    cout << "working" << endl;
+
     Trip_Request trip_request = trip_list.back();
 
     float distance = 0.0;
@@ -170,6 +169,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     if (error)
       LOG4CPLUS_ERROR(main_logger, error_message);
     trip_list.pop_back();
+    cout << "working" << endl;
   }
   /* while (!request_handler.finished())
   {
