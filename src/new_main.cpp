@@ -140,6 +140,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
   while (!trip_list.empty())
   {
+    cout << "working" << endl;
     Trip_Request trip_request = trip_list.back();
 
     float distance = 0.0;
