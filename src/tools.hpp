@@ -163,7 +163,7 @@ public:
     //condensed request
     vector<vector<Trip_Request>> thread_request()
     {
-        vector<Trip_Request> request_vector;
+        vector<Trip_Request> request_vector(5);
         if (!stream_filename)
         {
             cout << "No filename for pairs given. Bye!" << endl; 
@@ -198,7 +198,6 @@ public:
             trip_request.start_time = t0;
             trip_request.nfaID = nfaID;
             request_vector.push_back(trip_request);
-            cout<<"fire"<< endl;
             //cout<<"okay"<<endl;
         } while (!finished());
 
