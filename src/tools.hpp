@@ -205,9 +205,8 @@ public:
         cout<<cores<<endl;
         int vec_size = 0;
         int test = request_vector.size();
-        cout<<test<<endl;
         if(test < (int) cores){
-            vec_size = test;
+            vec_size = 1;
         }
         else{
             vec_size = test/(int)cores;
@@ -228,6 +227,10 @@ public:
             request_vector.pop_back();
             count++;
             }
+        }
+        if(!temp.empty()){
+            big_list.push_back(temp);
+            temp.clear();
         }
         return big_list;
     }
