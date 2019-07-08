@@ -205,7 +205,7 @@ public:
         cout<<cores<<endl;
         int vec_size = 0;
         if(request_vector.size() < (int) cores){
-            vec size = request_vector.size();
+            vec_size = request_vector.size();
         }
         else{
             vec_size = request_vector.size()/(int)cores;
