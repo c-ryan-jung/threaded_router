@@ -203,7 +203,13 @@ public:
 
         unsigned long const cores = std::thread::hardware_concurrency();
         cout<<cores<<endl;
-        int vec_size = request_vector.size()/(int)cores;
+        int vec_size = 0;
+        if(request_vector.size() < (int) cores){
+            vec size = request_vector.size();
+        }
+        else{
+            vec_size = request_vector.size()/(int)cores;
+        }
         int count = 0;
         vector<Trip_Request> temp;
         vector<vector<Trip_Request>> big_list;
