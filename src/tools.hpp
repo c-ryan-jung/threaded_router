@@ -204,6 +204,7 @@ public:
         unsigned long const cores = std::thread::hardware_concurrency();
         cout<<cores<<endl;
         int vec_size = 0;
+        cout<<request_vector.size();
         if(request_vector.size() < (int) cores){
             vec_size = request_vector.size();
         }
