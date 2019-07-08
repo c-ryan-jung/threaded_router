@@ -215,8 +215,8 @@ public:
         vector<Trip_Request> temp;
         vector<vector<Trip_Request>> big_list;
         while(!request_vector.empty()){
-           
-            if(count > vec_size){
+            
+            if(count >= vec_size){
                 count = 0;
                 big_list.push_back(temp);
                 temp.clear();
