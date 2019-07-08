@@ -163,7 +163,7 @@ public:
     //condensed request
     vector<vector<Trip_Request>> thread_request()
     {
-        vector<Trip_Request> request_vector();
+        vector<Trip_Request> request_vector;
         if (!stream_filename)
         {
             cout << "No filename for pairs given. Bye!" << endl; 
