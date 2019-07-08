@@ -1,7 +1,8 @@
-nteventlogappender.lo: nteventlogappender.cxx \
-  ../include/log4cplus/config.hxx \
-  ../include/log4cplus/config/defines.hxx \
-  ../include/log4cplus/helpers/thread-config.h
+nteventlogappender.lo: nteventlogappender.cxx /usr/include/stdc-predef.h \
+ ../include/log4cplus/config.hxx ../include/log4cplus/config/defines.hxx \
+ ../include/log4cplus/helpers/thread-config.h
+
+/usr/include/stdc-predef.h:
 
 ../include/log4cplus/config.hxx:
 

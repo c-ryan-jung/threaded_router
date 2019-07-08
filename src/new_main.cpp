@@ -289,6 +289,8 @@ int main(int argc, char *argv[])
     exit(-1);
   }
 
+  //cout<<big_list.size()<<endl;
+
   for (int i = 0; i < big_list.size(); i++)
   {
     //current problem

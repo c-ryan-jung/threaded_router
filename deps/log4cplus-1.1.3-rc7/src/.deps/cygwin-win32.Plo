@@ -1,1 +1,3 @@
-cygwin-win32.lo: cygwin-win32.cxx
+cygwin-win32.lo: cygwin-win32.cxx /usr/include/stdc-predef.h
+
+/usr/include/stdc-predef.h:

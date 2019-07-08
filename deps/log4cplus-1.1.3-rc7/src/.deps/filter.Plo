@@ -1,153 +1,174 @@
-filter.lo: filter.cxx ../include/log4cplus/spi/filter.h \
- ../include/log4cplus/config.hxx ../include/log4cplus/config/win32.h \
- c:\mingw\include\_mingw.h c:\mingw\include\msvcrtver.h \
- c:\mingw\include\w32api.h c:\mingw\include\sdkddkver.h \
+filter.lo: filter.cxx /usr/include/stdc-predef.h \
+ ../include/log4cplus/spi/filter.h ../include/log4cplus/config.hxx \
+ ../include/log4cplus/config/defines.hxx \
  ../include/log4cplus/helpers/thread-config.h \
  ../include/log4cplus/helpers/pointer.h \
- ../include/log4cplus/thread/syncprims.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\algorithm \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\utility \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\cpu_defines.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_relops.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_pair.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\move.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\concept_check.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\type_traits \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\initializer_list \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algobase.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functexcept.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_defines.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cpp_type_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\type_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\numeric_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_types.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_funcs.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\assertions.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ptr_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\debug.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\predefined_ops.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algo.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdlib \
- c:\mingw\include\stdlib.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\stddef.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\algorithmfwd.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_heap.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tempbuf.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_construct.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\new \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\exception \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_lockfree_defines.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\nested_exception.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\alloc_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\alloc_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\memoryfwd.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uniform_int_dist.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\limits \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert \
- c:\mingw\include\assert.h ../include/log4cplus/loglevel.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++allocator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\new_allocator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_uninitialized.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functional_hash.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hash_bytes.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc \
- ../include/log4cplus/tstring.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\char_traits.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar \
- c:\mingw\include\wchar.h c:\mingw\include\wctype.h \
- c:\mingw\include\sys\types.h c:\mingw\include\stdio.h \
- c:\mingw\include\sys/types.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
- c:\mingw\include\stdlib.h c:\mingw\include\direct.h \
- c:\mingw\include\sys/stat.h c:\mingw\include\io.h \
- c:\mingw\include\stdint.h c:\mingw\include\time.h \
- c:\mingw\include\locale.h c:\mingw\include\process.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdint \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h \
- c:\mingw\include\stdint.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\localefwd.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++locale.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\clocale \
- c:\mingw\include\locale.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iosfwd \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cctype \
- c:\mingw\include\ctype.h c:\mingw\include\wctype.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream_insert.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cxxabi_forced.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_function.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\binders.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\atomicity.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr-default.h \
- c:\mingw\include\errno.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\atomic_word.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\string_conversions.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdio \
- c:\mingw\include\stdio.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cerrno \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc \
- ../include/log4cplus/tchar.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef \
+ ../include/log4cplus/thread/syncprims.h /usr/include/c++/7/algorithm \
+ /usr/include/c++/7/utility \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h \
+ /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
+ /usr/include/x86_64-linux-gnu/bits/wordsize.h \
+ /usr/include/x86_64-linux-gnu/bits/long-double.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs.h \
+ /usr/include/x86_64-linux-gnu/gnu/stubs-64.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h \
+ /usr/include/c++/7/bits/stl_relops.h /usr/include/c++/7/bits/stl_pair.h \
+ /usr/include/c++/7/bits/move.h /usr/include/c++/7/bits/concept_check.h \
+ /usr/include/c++/7/type_traits /usr/include/c++/7/initializer_list \
+ /usr/include/c++/7/bits/stl_algobase.h \
+ /usr/include/c++/7/bits/functexcept.h \
+ /usr/include/c++/7/bits/exception_defines.h \
+ /usr/include/c++/7/bits/cpp_type_traits.h \
+ /usr/include/c++/7/ext/type_traits.h \
+ /usr/include/c++/7/ext/numeric_traits.h \
+ /usr/include/c++/7/bits/stl_iterator_base_types.h \
+ /usr/include/c++/7/bits/stl_iterator_base_funcs.h \
+ /usr/include/c++/7/debug/assertions.h \
+ /usr/include/c++/7/bits/stl_iterator.h \
+ /usr/include/c++/7/bits/ptr_traits.h /usr/include/c++/7/debug/debug.h \
+ /usr/include/c++/7/bits/predefined_ops.h \
+ /usr/include/c++/7/bits/stl_algo.h /usr/include/c++/7/cstdlib \
+ /usr/include/stdlib.h \
+ /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h \
+ /usr/include/x86_64-linux-gnu/bits/waitflags.h \
+ /usr/include/x86_64-linux-gnu/bits/waitstatus.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn.h \
+ /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
+ /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
+ /usr/include/x86_64-linux-gnu/sys/types.h \
+ /usr/include/x86_64-linux-gnu/bits/types.h \
+ /usr/include/x86_64-linux-gnu/bits/typesizes.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clock_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/time_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/timer_t.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/endian.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap.h \
+ /usr/include/x86_64-linux-gnu/bits/byteswap-16.h \
+ /usr/include/x86_64-linux-gnu/bits/uintn-identity.h \
+ /usr/include/x86_64-linux-gnu/sys/select.h \
+ /usr/include/x86_64-linux-gnu/bits/select.h \
+ /usr/include/x86_64-linux-gnu/bits/types/sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h \
+ /usr/include/x86_64-linux-gnu/bits/select2.h \
+ /usr/include/x86_64-linux-gnu/sys/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/sysmacros.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes.h \
+ /usr/include/x86_64-linux-gnu/bits/thread-shared-types.h \
+ /usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h \
+ /usr/include/alloca.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
+ /usr/include/x86_64-linux-gnu/bits/stdlib.h \
+ /usr/include/c++/7/bits/std_abs.h /usr/include/c++/7/bits/algorithmfwd.h \
+ /usr/include/c++/7/bits/stl_heap.h /usr/include/c++/7/bits/stl_tempbuf.h \
+ /usr/include/c++/7/bits/stl_construct.h /usr/include/c++/7/new \
+ /usr/include/c++/7/exception /usr/include/c++/7/bits/exception.h \
+ /usr/include/c++/7/bits/exception_ptr.h \
+ /usr/include/c++/7/bits/cxxabi_init_exception.h \
+ /usr/include/c++/7/typeinfo /usr/include/c++/7/bits/hash_bytes.h \
+ /usr/include/c++/7/bits/nested_exception.h \
+ /usr/include/c++/7/ext/alloc_traits.h \
+ /usr/include/c++/7/bits/alloc_traits.h \
+ /usr/include/c++/7/bits/memoryfwd.h \
+ /usr/include/c++/7/bits/uniform_int_dist.h /usr/include/c++/7/limits \
+ /usr/include/c++/7/cassert /usr/include/assert.h \
+ /usr/include/c++/7/atomic /usr/include/c++/7/bits/atomic_base.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h /usr/include/stdint.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar.h \
+ /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
+ /usr/include/c++/7/bits/atomic_lockfree_defines.h \
+ ../include/log4cplus/loglevel.h /usr/include/c++/7/vector \
+ /usr/include/c++/7/bits/allocator.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h \
+ /usr/include/c++/7/ext/new_allocator.h \
+ /usr/include/c++/7/bits/stl_uninitialized.h \
+ /usr/include/c++/7/bits/stl_vector.h \
+ /usr/include/c++/7/bits/stl_bvector.h \
+ /usr/include/c++/7/bits/functional_hash.h \
+ /usr/include/c++/7/bits/range_access.h \
+ /usr/include/c++/7/bits/vector.tcc ../include/log4cplus/tstring.h \
+ /usr/include/c++/7/string /usr/include/c++/7/bits/stringfwd.h \
+ /usr/include/c++/7/bits/char_traits.h /usr/include/c++/7/bits/postypes.h \
+ /usr/include/c++/7/cwchar /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h \
+ /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \
+ /usr/include/x86_64-linux-gnu/bits/types/__FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/types/FILE.h \
+ /usr/include/x86_64-linux-gnu/bits/wchar2.h /usr/include/c++/7/cstdint \
+ /usr/include/c++/7/bits/localefwd.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h \
+ /usr/include/c++/7/clocale /usr/include/locale.h \
+ /usr/include/x86_64-linux-gnu/bits/locale.h /usr/include/c++/7/iosfwd \
+ /usr/include/c++/7/cctype /usr/include/ctype.h \
+ /usr/include/c++/7/bits/ostream_insert.h \
+ /usr/include/c++/7/bits/cxxabi_forced.h \
+ /usr/include/c++/7/bits/stl_function.h \
+ /usr/include/c++/7/backward/binders.h \
+ /usr/include/c++/7/bits/basic_string.h \
+ /usr/include/c++/7/ext/atomicity.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h \
+ /usr/include/pthread.h /usr/include/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/sched.h \
+ /usr/include/x86_64-linux-gnu/bits/cpu-set.h /usr/include/time.h \
+ /usr/include/x86_64-linux-gnu/bits/time.h \
+ /usr/include/x86_64-linux-gnu/bits/timex.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_tm.h \
+ /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
+ /usr/include/x86_64-linux-gnu/bits/setjmp.h \
+ /usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h \
+ /usr/include/c++/7/ext/string_conversions.h /usr/include/c++/7/cstdio \
+ /usr/include/stdio.h /usr/include/x86_64-linux-gnu/bits/libio.h \
+ /usr/include/x86_64-linux-gnu/bits/_G_config.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio_lim.h \
+ /usr/include/x86_64-linux-gnu/bits/sys_errlist.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio.h \
+ /usr/include/x86_64-linux-gnu/bits/stdio2.h /usr/include/c++/7/cerrno \
+ /usr/include/errno.h /usr/include/x86_64-linux-gnu/bits/errno.h \
+ /usr/include/linux/errno.h /usr/include/x86_64-linux-gnu/asm/errno.h \
+ /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
+ /usr/include/c++/7/bits/basic_string.tcc ../include/log4cplus/tchar.h \
  ../include/log4cplus/helpers/loglog.h ../include/log4cplus/streams.h \
  ../include/log4cplus/helpers/stringhelper.h \
- ../include/log4cplus/helpers/property.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\map \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tree.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\aligned_buffer.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_map.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\tuple \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\array \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdexcept \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uses_allocator.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_multimap.h \
- ../include/log4cplus/spi/loggingevent.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\memory \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_raw_storage_iter.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\typeinfo \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\concurrence.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\functional \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_base.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocated_ptr.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_atomic.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_base.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h \
- ../include/log4cplus/ndc.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\deque \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_deque.h \
- c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\deque.tcc \
- ../include/log4cplus/mdc.h ../include/log4cplus/helpers/timehelper.h \
- c:\mingw\include\time.h c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime \
+ ../include/log4cplus/helpers/property.h /usr/include/c++/7/map \
+ /usr/include/c++/7/bits/stl_tree.h \
+ /usr/include/c++/7/ext/aligned_buffer.h \
+ /usr/include/c++/7/bits/stl_map.h /usr/include/c++/7/tuple \
+ /usr/include/c++/7/array /usr/include/c++/7/stdexcept \
+ /usr/include/c++/7/bits/uses_allocator.h \
+ /usr/include/c++/7/bits/invoke.h /usr/include/c++/7/bits/stl_multimap.h \
+ ../include/log4cplus/spi/loggingevent.h /usr/include/c++/7/memory \
+ /usr/include/c++/7/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/7/ext/concurrence.h \
+ /usr/include/c++/7/bits/unique_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr.h \
+ /usr/include/c++/7/bits/shared_ptr_base.h \
+ /usr/include/c++/7/bits/allocated_ptr.h \
+ /usr/include/c++/7/bits/refwrap.h \
+ /usr/include/c++/7/bits/shared_ptr_atomic.h \
+ /usr/include/c++/7/backward/auto_ptr.h ../include/log4cplus/ndc.h \
+ /usr/include/c++/7/deque /usr/include/c++/7/bits/stl_deque.h \
+ /usr/include/c++/7/bits/deque.tcc ../include/log4cplus/mdc.h \
+ ../include/log4cplus/helpers/timehelper.h /usr/include/c++/7/ctime \
  ../include/log4cplus/thread/threads.h \
  ../include/log4cplus/thread/syncprims-pub-impl.h
+
+/usr/include/stdc-predef.h:
 
 ../include/log4cplus/spi/filter.h:
 
 ../include/log4cplus/config.hxx:
 
-../include/log4cplus/config/win32.h:
-
-c:\mingw\include\_mingw.h:
-
-c:\mingw\include\msvcrtver.h:
-
-c:\mingw\include\w32api.h:
-
-c:\mingw\include\sdkddkver.h:
+../include/log4cplus/config/defines.hxx:
 
 ../include/log4cplus/helpers/thread-config.h:
 
@@ -155,213 +176,341 @@ c:\mingw\include\sdkddkver.h:
 
 ../include/log4cplus/thread/syncprims.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\algorithm:
+/usr/include/c++/7/algorithm:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\utility:
+/usr/include/c++/7/utility:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++config.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++config.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\os_defines.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/os_defines.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\cpu_defines.h:
+/usr/include/features.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_relops.h:
+/usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_pair.h:
+/usr/include/x86_64-linux-gnu/bits/wordsize.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\move.h:
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\concept_check.h:
+/usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\type_traits:
+/usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\initializer_list:
+/usr/include/x86_64-linux-gnu/c++/7/bits/cpu_defines.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algobase.h:
+/usr/include/c++/7/bits/stl_relops.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functexcept.h:
+/usr/include/c++/7/bits/stl_pair.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_defines.h:
+/usr/include/c++/7/bits/move.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cpp_type_traits.h:
+/usr/include/c++/7/bits/concept_check.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\type_traits.h:
+/usr/include/c++/7/type_traits:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\numeric_traits.h:
+/usr/include/c++/7/initializer_list:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_types.h:
+/usr/include/c++/7/bits/stl_algobase.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator_base_funcs.h:
+/usr/include/c++/7/bits/functexcept.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\assertions.h:
+/usr/include/c++/7/bits/exception_defines.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_iterator.h:
+/usr/include/c++/7/bits/cpp_type_traits.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ptr_traits.h:
+/usr/include/c++/7/ext/type_traits.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\debug\debug.h:
+/usr/include/c++/7/ext/numeric_traits.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\predefined_ops.h:
+/usr/include/c++/7/bits/stl_iterator_base_types.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_algo.h:
+/usr/include/c++/7/bits/stl_iterator_base_funcs.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdlib:
+/usr/include/c++/7/debug/assertions.h:
 
-c:\mingw\include\stdlib.h:
+/usr/include/c++/7/bits/stl_iterator.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\stddef.h:
+/usr/include/c++/7/bits/ptr_traits.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\algorithmfwd.h:
+/usr/include/c++/7/debug/debug.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_heap.h:
+/usr/include/c++/7/bits/predefined_ops.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tempbuf.h:
+/usr/include/c++/7/bits/stl_algo.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_construct.h:
+/usr/include/c++/7/cstdlib:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\new:
+/usr/include/stdlib.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\exception:
+/usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_lockfree_defines.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stddef.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\exception_ptr.h:
+/usr/include/x86_64-linux-gnu/bits/waitflags.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\nested_exception.h:
+/usr/include/x86_64-linux-gnu/bits/waitstatus.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\alloc_traits.h:
+/usr/include/x86_64-linux-gnu/bits/floatn.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\alloc_traits.h:
+/usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\memoryfwd.h:
+/usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uniform_int_dist.h:
+/usr/include/x86_64-linux-gnu/bits/types/__locale_t.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\limits:
+/usr/include/x86_64-linux-gnu/sys/types.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cassert:
+/usr/include/x86_64-linux-gnu/bits/types.h:
 
-c:\mingw\include\assert.h:
+/usr/include/x86_64-linux-gnu/bits/typesizes.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/time_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/timer_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-intn.h:
+
+/usr/include/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap.h:
+
+/usr/include/x86_64-linux-gnu/bits/byteswap-16.h:
+
+/usr/include/x86_64-linux-gnu/bits/uintn-identity.h:
+
+/usr/include/x86_64-linux-gnu/sys/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/select.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/__sigset_t.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timeval.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
+
+/usr/include/x86_64-linux-gnu/bits/select2.h:
+
+/usr/include/x86_64-linux-gnu/sys/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/sysmacros.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes.h:
+
+/usr/include/x86_64-linux-gnu/bits/thread-shared-types.h:
+
+/usr/include/x86_64-linux-gnu/bits/pthreadtypes-arch.h:
+
+/usr/include/alloca.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-bsearch.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib-float.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdlib.h:
+
+/usr/include/c++/7/bits/std_abs.h:
+
+/usr/include/c++/7/bits/algorithmfwd.h:
+
+/usr/include/c++/7/bits/stl_heap.h:
+
+/usr/include/c++/7/bits/stl_tempbuf.h:
+
+/usr/include/c++/7/bits/stl_construct.h:
+
+/usr/include/c++/7/new:
+
+/usr/include/c++/7/exception:
+
+/usr/include/c++/7/bits/exception.h:
+
+/usr/include/c++/7/bits/exception_ptr.h:
+
+/usr/include/c++/7/bits/cxxabi_init_exception.h:
+
+/usr/include/c++/7/typeinfo:
+
+/usr/include/c++/7/bits/hash_bytes.h:
+
+/usr/include/c++/7/bits/nested_exception.h:
+
+/usr/include/c++/7/ext/alloc_traits.h:
+
+/usr/include/c++/7/bits/alloc_traits.h:
+
+/usr/include/c++/7/bits/memoryfwd.h:
+
+/usr/include/c++/7/bits/uniform_int_dist.h:
+
+/usr/include/c++/7/limits:
+
+/usr/include/c++/7/cassert:
+
+/usr/include/assert.h:
+
+/usr/include/c++/7/atomic:
+
+/usr/include/c++/7/bits/atomic_base.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdint.h:
+
+/usr/include/stdint.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
+
+/usr/include/c++/7/bits/atomic_lockfree_defines.h:
 
 ../include/log4cplus/loglevel.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\vector:
+/usr/include/c++/7/vector:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocator.h:
+/usr/include/c++/7/bits/allocator.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++allocator.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++allocator.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\new_allocator.h:
+/usr/include/c++/7/ext/new_allocator.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_uninitialized.h:
+/usr/include/c++/7/bits/stl_uninitialized.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_vector.h:
+/usr/include/c++/7/bits/stl_vector.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_bvector.h:
+/usr/include/c++/7/bits/stl_bvector.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\functional_hash.h:
+/usr/include/c++/7/bits/functional_hash.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\hash_bytes.h:
+/usr/include/c++/7/bits/range_access.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\range_access.h:
-
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\vector.tcc:
+/usr/include/c++/7/bits/vector.tcc:
 
 ../include/log4cplus/tstring.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\string:
+/usr/include/c++/7/string:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stringfwd.h:
+/usr/include/c++/7/bits/stringfwd.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\char_traits.h:
+/usr/include/c++/7/bits/char_traits.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\postypes.h:
+/usr/include/c++/7/bits/postypes.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cwchar:
+/usr/include/c++/7/cwchar:
 
-c:\mingw\include\wchar.h:
+/usr/include/wchar.h:
 
-c:\mingw\include\wctype.h:
+/usr/lib/gcc/x86_64-linux-gnu/7/include/stdarg.h:
 
-c:\mingw\include\sys\types.h:
+/usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
 
-c:\mingw\include\stdio.h:
+/usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 
-c:\mingw\include\sys/types.h:
+/usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h:
+/usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
 
-c:\mingw\include\stdlib.h:
+/usr/include/x86_64-linux-gnu/bits/types/FILE.h:
 
-c:\mingw\include\direct.h:
+/usr/include/x86_64-linux-gnu/bits/wchar2.h:
 
-c:\mingw\include\sys/stat.h:
+/usr/include/c++/7/cstdint:
 
-c:\mingw\include\io.h:
+/usr/include/c++/7/bits/localefwd.h:
 
-c:\mingw\include\stdint.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/c++locale.h:
 
-c:\mingw\include\time.h:
+/usr/include/c++/7/clocale:
 
-c:\mingw\include\locale.h:
+/usr/include/locale.h:
 
-c:\mingw\include\process.h:
+/usr/include/x86_64-linux-gnu/bits/locale.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdint:
+/usr/include/c++/7/iosfwd:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\stdint.h:
+/usr/include/c++/7/cctype:
 
-c:\mingw\include\stdint.h:
+/usr/include/ctype.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\localefwd.h:
+/usr/include/c++/7/bits/ostream_insert.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\c++locale.h:
+/usr/include/c++/7/bits/cxxabi_forced.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\clocale:
+/usr/include/c++/7/bits/stl_function.h:
 
-c:\mingw\include\locale.h:
+/usr/include/c++/7/backward/binders.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\iosfwd:
+/usr/include/c++/7/bits/basic_string.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cctype:
+/usr/include/c++/7/ext/atomicity.h:
 
-c:\mingw\include\ctype.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/gthr.h:
 
-c:\mingw\include\wctype.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/gthr-default.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\ostream_insert.h:
+/usr/include/pthread.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\cxxabi_forced.h:
+/usr/include/sched.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_function.h:
+/usr/include/x86_64-linux-gnu/bits/sched.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\binders.h:
+/usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.h:
+/usr/include/time.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\atomicity.h:
+/usr/include/x86_64-linux-gnu/bits/time.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr.h:
+/usr/include/x86_64-linux-gnu/bits/timex.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\gthr-default.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_tm.h:
 
-c:\mingw\include\errno.h:
+/usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\mingw32\bits\atomic_word.h:
+/usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\string_conversions.h:
+/usr/include/x86_64-linux-gnu/c++/7/bits/atomic_word.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstdio:
+/usr/include/c++/7/ext/string_conversions.h:
 
-c:\mingw\include\stdio.h:
+/usr/include/c++/7/cstdio:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cerrno:
+/usr/include/stdio.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\basic_string.tcc:
+/usr/include/x86_64-linux-gnu/bits/libio.h:
+
+/usr/include/x86_64-linux-gnu/bits/_G_config.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio_lim.h:
+
+/usr/include/x86_64-linux-gnu/bits/sys_errlist.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio.h:
+
+/usr/include/x86_64-linux-gnu/bits/stdio2.h:
+
+/usr/include/c++/7/cerrno:
+
+/usr/include/errno.h:
+
+/usr/include/x86_64-linux-gnu/bits/errno.h:
+
+/usr/include/linux/errno.h:
+
+/usr/include/x86_64-linux-gnu/asm/errno.h:
+
+/usr/include/asm-generic/errno.h:
+
+/usr/include/asm-generic/errno-base.h:
+
+/usr/include/c++/7/bits/basic_string.tcc:
 
 ../include/log4cplus/tchar.h:
-
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef:
 
 ../include/log4cplus/helpers/loglog.h:
 
@@ -371,65 +520,61 @@ c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\cstddef:
 
 ../include/log4cplus/helpers/property.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\map:
+/usr/include/c++/7/map:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_tree.h:
+/usr/include/c++/7/bits/stl_tree.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\aligned_buffer.h:
+/usr/include/c++/7/ext/aligned_buffer.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_map.h:
+/usr/include/c++/7/bits/stl_map.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\tuple:
+/usr/include/c++/7/tuple:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\array:
+/usr/include/c++/7/array:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\stdexcept:
+/usr/include/c++/7/stdexcept:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\uses_allocator.h:
+/usr/include/c++/7/bits/uses_allocator.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_multimap.h:
+/usr/include/c++/7/bits/invoke.h:
+
+/usr/include/c++/7/bits/stl_multimap.h:
 
 ../include/log4cplus/spi/loggingevent.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\memory:
+/usr/include/c++/7/memory:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_raw_storage_iter.h:
+/usr/include/c++/7/bits/stl_raw_storage_iter.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\typeinfo:
+/usr/include/c++/7/ext/concurrence.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ext\concurrence.h:
+/usr/include/c++/7/bits/unique_ptr.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\functional:
+/usr/include/c++/7/bits/shared_ptr.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\unique_ptr.h:
+/usr/include/c++/7/bits/shared_ptr_base.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr.h:
+/usr/include/c++/7/bits/allocated_ptr.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_base.h:
+/usr/include/c++/7/bits/refwrap.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\allocated_ptr.h:
+/usr/include/c++/7/bits/shared_ptr_atomic.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\shared_ptr_atomic.h:
-
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\atomic_base.h:
-
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\backward\auto_ptr.h:
+/usr/include/c++/7/backward/auto_ptr.h:
 
 ../include/log4cplus/ndc.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\deque:
+/usr/include/c++/7/deque:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\stl_deque.h:
+/usr/include/c++/7/bits/stl_deque.h:
 
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\bits\deque.tcc:
+/usr/include/c++/7/bits/deque.tcc:
 
 ../include/log4cplus/mdc.h:
 
 ../include/log4cplus/helpers/timehelper.h:
 
-c:\mingw\include\time.h:
-
-c:\mingw\lib\gcc\mingw32\6.3.0\include\c++\ctime:
+/usr/include/c++/7/ctime:
 
 ../include/log4cplus/thread/threads.h:
 

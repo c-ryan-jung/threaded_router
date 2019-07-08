@@ -202,6 +202,7 @@ public:
         } while (!finished());
 
         unsigned long const cores = std::thread::hardware_concurrency();
+        cout<<cores<<endl;
         int vec_size = request_vector.size()/(int)cores;
         int count = 0;
         vector<Trip_Request> temp;
