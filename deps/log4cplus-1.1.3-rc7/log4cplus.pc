@@ -9,5 +9,5 @@ Version: 1.1.3
 Description: Simple to use, thread-safe C++ logging API
 Requires:
 Libs: -L${libdir} -llog4cplus
-Libs.private: -lws2_32 -ladvapi32 -lkernel32  
+Libs.private:  
 Cflags: -I${includedir}

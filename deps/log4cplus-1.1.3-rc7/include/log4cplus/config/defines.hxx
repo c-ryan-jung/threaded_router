@@ -3,16 +3,16 @@
 #define LOG4CPLUS_CONFIG_DEFINES_HXX
 
 /* */
-/* #undef LOG4CPLUS_HAVE_SYSLOG_H */
+#define LOG4CPLUS_HAVE_SYSLOG_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_ARPA_INET_H */
+#define LOG4CPLUS_HAVE_ARPA_INET_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_NETINET_IN_H */
+#define LOG4CPLUS_HAVE_NETINET_IN_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_NETINET_TCP_H */
+#define LOG4CPLUS_HAVE_NETINET_TCP_H 1
 
 /* */
 #define LOG4CPLUS_HAVE_SYS_TIMEB_H 1
@@ -27,7 +27,7 @@
 #define LOG4CPLUS_HAVE_SYS_STAT_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_SYS_SYSCALL_H */
+#define LOG4CPLUS_HAVE_SYS_SYSCALL_H 1
 
 /* */
 #define LOG4CPLUS_HAVE_SYS_FILE_H 1
@@ -36,10 +36,10 @@
 #define LOG4CPLUS_HAVE_TIME_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_SYS_SOCKET_H */
+#define LOG4CPLUS_HAVE_SYS_SOCKET_H 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_NETDB_H */
+#define LOG4CPLUS_HAVE_NETDB_H 1
 
 /* */
 #define LOG4CPLUS_HAVE_UNISTD_H 1
@@ -72,10 +72,10 @@
 #define LOG4CPLUS_HAVE_FTIME 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_GETADDRINFO */
+#define LOG4CPLUS_HAVE_GETADDRINFO 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_GETHOSTBYNAME_R */
+#define LOG4CPLUS_HAVE_GETHOSTBYNAME_R 1
 
 /* */
 #define LOG4CPLUS_HAVE_GETPID 1
@@ -90,52 +90,52 @@
 #define LOG4CPLUS_HAVE_NANOSLEEP 1
 
 /* Define to 1 if you have the `clock_nanosleep' function. */
-/* #undef LOG4CPLUS_HAVE_CLOCK_NANOSLEEP */
+#define LOG4CPLUS_HAVE_CLOCK_NANOSLEEP 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_GMTIME_R */
+#define LOG4CPLUS_HAVE_GMTIME_R 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_HTONL */
+#define LOG4CPLUS_HAVE_HTONL 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_HTONS */
+#define LOG4CPLUS_HAVE_HTONS 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_LOCALTIME_R */
+#define LOG4CPLUS_HAVE_LOCALTIME_R 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_LSTAT */
+#define LOG4CPLUS_HAVE_LSTAT 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_FCNTL */
+#define LOG4CPLUS_HAVE_FCNTL 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_LOCKF */
+#define LOG4CPLUS_HAVE_LOCKF 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_FLOCK */
+#define LOG4CPLUS_HAVE_FLOCK 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_NTOHL */
+#define LOG4CPLUS_HAVE_NTOHL 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_NTOHS */
+#define LOG4CPLUS_HAVE_NTOHS 1
 
 /* Define to 1 if you have the `shutdown' function. */
-/* #undef LOG4CPLUS_HAVE_SHUTDOWN */
+#define LOG4CPLUS_HAVE_SHUTDOWN 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_PIPE */
+#define LOG4CPLUS_HAVE_PIPE 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_PIPE2 */
+#define LOG4CPLUS_HAVE_PIPE2 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_POLL */
+#define LOG4CPLUS_HAVE_POLL 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_POLL_H */
+#define LOG4CPLUS_HAVE_POLL_H 1
 
 /* */
 #define LOG4CPLUS_HAVE_STAT 1
@@ -155,22 +155,22 @@
 /* #undef LOG4CPLUS_WORKING_C_LOCALE */
 
 /* Define to int if undefined. */
-#define socklen_t int
+/* #undef socklen_t */
 
 /* Defined for --enable-debugging builds. */
 /* #undef LOG4CPLUS_DEBUGGING */
 
 /* Defined if the compiler understands __declspec(dllexport) or
    __attribute__((visibility("default"))) construct. */
-#define LOG4CPLUS_DECLSPEC_EXPORT __declspec(dllexport)
+#define LOG4CPLUS_DECLSPEC_EXPORT __attribute__ ((visibility("default")))
 
 /* Defined if the compiler understands __declspec(dllimport) or
    __attribute__((visibility("default"))) construct. */
-#define LOG4CPLUS_DECLSPEC_IMPORT __declspec(dllimport)
+#define LOG4CPLUS_DECLSPEC_IMPORT __attribute__ ((visibility("default")))
 
 /* Defined if the compiler understands
    __attribute__((visibility("hidden"))) construct. */
-#define LOG4CPLUS_DECLSPEC_PRIVATE /* empty */
+#define LOG4CPLUS_DECLSPEC_PRIVATE __attribute__ ((visibility("hidden")))
 
 /* */
 #define LOG4CPLUS_HAVE_TLS_SUPPORT 1
@@ -201,31 +201,31 @@
 #define LOG4CPLUS_HAVE_VSNPRINTF 1
 
 /* Define to 1 if you have the `vsnwprintf' function. */
-#define LOG4CPLUS_HAVE_VSNWPRINTF 1
+/* #undef LOG4CPLUS_HAVE_VSNWPRINTF */
 
 /* Define to 1 if you have the `_vsnwprintf' function. */
-#define LOG4CPLUS_HAVE__VSNWPRINTF 1
+/* #undef LOG4CPLUS_HAVE__VSNWPRINTF */
 
 /* */
 /* #undef LOG4CPLUS_HAVE__VSNPRINTF */
 
 /* Define to 1 if you have the `vfprintf_s' function. */
-#define LOG4CPLUS_HAVE_VFPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE_VFPRINTF_S */
 
 /* Define to 1 if you have the `vfwprintf_s' function. */
-#define LOG4CPLUS_HAVE_VFWPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE_VFWPRINTF_S */
 
 /* Define to 1 if you have the `vsprintf_s' function. */
-#define LOG4CPLUS_HAVE_VSPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE_VSPRINTF_S */
 
 /* Define to 1 if you have the `vswprintf_s' function. */
-#define LOG4CPLUS_HAVE_VSWPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE_VSWPRINTF_S */
 
 /* Define to 1 if you have the `_vsnprintf_s' function. */
-#define LOG4CPLUS_HAVE__VSNPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE__VSNPRINTF_S */
 
 /* Define to 1 if you have the `_vsnwprintf_s' function. */
-#define LOG4CPLUS_HAVE__VSNWPRINTF_S 1
+/* #undef LOG4CPLUS_HAVE__VSNWPRINTF_S */
 
 /* Defined if the compiler supports __FUNCTION__ macro. */
 #define LOG4CPLUS_HAVE_FUNCTION_MACRO 1
@@ -243,7 +243,7 @@
 #define LOG4CPLUS_HAVE_WCSTOMBS 1
 
 /* Define to 1 if you have Linux style syscall(SYS_gettid). */
-/* #undef LOG4CPLUS_HAVE_GETTID */
+#define LOG4CPLUS_HAVE_GETTID 1
 
 /* Define when iconv() is available. */
 /* #undef LOG4CPLUS_WITH_ICONV */
