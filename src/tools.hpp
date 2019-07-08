@@ -198,6 +198,7 @@ public:
             trip_request.start_time = t0;
             trip_request.nfaID = nfaID;
             request_vector.push_back(trip_request);
+            cout<<"fire"<< endl;
             //cout<<"okay"<<endl;
         } while (!finished());
 
