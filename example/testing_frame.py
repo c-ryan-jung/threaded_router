@@ -32,7 +32,7 @@ result_list = []
 for i  in range(3):
     start = time.time()
     subprocess_cmd("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt")
-    test = start - time.time()
+    test = time.time() - start
     result_list.append(test)
 
 print(mean(result_list))
