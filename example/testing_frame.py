@@ -17,7 +17,7 @@ def write_test():
     while(node_num2 == node_num1):
         node_num2 = random.randint(1,10)
 
-    for i in range(10):
+    for i in range(100):
         f.write(str(i) + " " + str(node_num1) + " " + str(node_num2) + " " + str(10) + " " + str(0) + "\n")
     f.close
 
@@ -29,7 +29,7 @@ def subprocess_cmd(command): #Adapted from stackoverflow example
 write_test()
 subprocess_cmd("cd ../src; make; cd ../example;")
 result_list = []
-for i  in range(3):
+for i  in range(1):
     start = time.time()
     subprocess_cmd("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt")
     test = time.time() - start
