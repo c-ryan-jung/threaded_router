@@ -26,7 +26,7 @@ using namespace std;
 using namespace log4cplus;
 
 Event_Handler event_handler;
-char* glob = "a";
+char* glob = 'a';
 
 std::mutex mtx;
 std::mutex mtx1;
@@ -80,10 +80,10 @@ void print_usage()
 void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
   ofstream read_out;
-  mtx.lock()
-  read_out.open(glob)
+  mtx.lock();
+  read_out.open(glob);
   glob++;
-  mtx.unlock()
+  mtx.unlock();
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
