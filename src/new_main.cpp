@@ -80,11 +80,11 @@ void print_usage()
 //Threaded trip request processing
 void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
-  fstream read_out;
+  mtx.lock();
   string glob_string = string(1, glob);
   glob_string = glob_string + ".txt";
-  mtx.lock();
-  read_out.open(glob_string, std::fstream::in);
+  ofstream read_out(glob_string);
+  //read_out.open(glob_string, std::fstream::in);
   glob++;
   mtx.unlock();
   Request_Handler request_handler;
