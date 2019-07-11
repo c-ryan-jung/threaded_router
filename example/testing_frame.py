@@ -11,7 +11,7 @@ from statistics import mean
 
 
 def write_test():
-    f = open("test-trip-file.txt", "w")
+    f = open("test-trip-file.txt", "+w")
     node_num1 = random.randint(1,10)
     node_num2 = random.randint(1,10)
     while(node_num2 == node_num1):
@@ -20,6 +20,7 @@ def write_test():
     for i in range(100):
         f.write(str(i) + " " + str(node_num1) + " " + str(node_num2) + " " + str(10) + " " + str(0) + "\n")
     f.close
+    print("flag")
 
 def subprocess_cmd(command): #Adapted from stackoverflow example
     process = subprocess.Popen(command,stdout=subprocess.PIPE, shell=True)
