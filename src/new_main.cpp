@@ -12,6 +12,7 @@
 #include <fstream>
 #include <thread>
 #include <mutex>
+#include <string>
 
 #include "dijkstra.hpp"
 #include "graph.hpp"
@@ -80,7 +81,7 @@ void print_usage()
 void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
   fstream read_out;
-  String glob_string = string(1, glob);
+  string glob_string = string(1, glob);
   mtx.lock();
   read_out.open(glob_string, std::fstream::in);
   glob++;
