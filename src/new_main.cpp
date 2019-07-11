@@ -26,7 +26,7 @@ using namespace std;
 using namespace log4cplus;
 
 Event_Handler event_handler;
-char* glob = a;
+char* glob = "a";
 
 std::mutex mtx;
 std::mutex mtx1;
