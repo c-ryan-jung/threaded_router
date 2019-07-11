@@ -18,7 +18,7 @@ def write_test():
         node_num2 = random.randint(1,10)
 
     for i in range(10):
-        f.write(str(100 + i) + " " + str(node_num1) + " " + str(node_num2) + " " + str(1000) + " " + str(0) + "\n")
+        f.write(str(i) + " " + str(node_num1) + " " + str(node_num2) + " " + str(10) + " " + str(0) + "\n")
     f.close
 
 def subprocess_cmd(command):
