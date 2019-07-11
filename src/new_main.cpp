@@ -26,8 +26,10 @@ using namespace std;
 using namespace log4cplus;
 
 Event_Handler event_handler;
+char* glob = a;
 
 std::mutex mtx;
+std::mutex mtx1;
 /// Logger.
 Logger main_logger = Logger::getInstance("Router");
 
@@ -73,9 +75,15 @@ void print_usage()
        << " -t <time>    time of departure" << endl;
 }
 
+
 //Threaded trip request processing
 void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
+  ofstream read_out;
+  mtx.lock()
+  read_out.open(glob)
+  glob++;
+  mtx.unlock()
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
@@ -103,29 +111,35 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     int nNFAs;
 
     file >> nNFAs;
-    cout << "Found " << nNFAs << " NFAs" << endl;
+    // cout << "Found " << nNFAs << " NFAs" << endl;
+    read_out << "Found " << nNFAs << " NFAs" << endl;
     file.get();
 
     for (unsigned int i = 0; (int)i < nNFAs; ++i)
     {
       file.getline(buffer, 5000, '\n');
-      cout << "NFA: " << i << "\t" << buffer << endl;
+      //cout << "NFA: " << i << "\t" << buffer << endl;
+      read_out << "NFA: " << i << "\t" << buffer << endl;
       NFA_Graph *nfa = new NFA_Graph(buffer, network);
       nfaVector.push_back(nfa);
     }
   }
 
-  cout << "Status." << endl;
+  //cout << "Status." << endl;
+  read_out << "Status." << endl;
 
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
 
-  cout << "Status.." << endl;
+  //cout << "Status.." << endl;
+  read_out << "Status.." << endl;
 
   event_handler.set_graph(network);
 
-  cout << "Status..." << endl;
+  //cout << "Status..." << endl;
+
+  read_out << "Status..." << endl;
 
   // initialize request handler
 
@@ -134,7 +148,8 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   //request_handler.init();
   //put a thing here -----------------------v change  that
   vector<Trip_Request> trip_list = trips;
-  cout << "Status...." << endl;
+  //cout << "Status...." << endl;
+  read_out << "Status...." << endl;
 
   while (!trip_list.empty())
   {
@@ -151,13 +166,13 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
     router.find_path((Algorithm)algorithm, trip_request /* request_handler.request()*/, plan,
                      time_elapsed, trip_request.nfaID);
 
-    //mtx.lock();
+    mtx1.lock();
     out_file << trip_request.id << '\t'
              << trip_request.source << '\t'
              << trip_request.destination << '\t';
 
     out_file << plan << endl;
-    //mtx.unlock();
+    mtx1.unlock();
 
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
@@ -169,6 +184,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
       LOG4CPLUS_ERROR(main_logger, error_message);
 
     trip_list.pop_back();
+    read_out.close();
   }
   /* while (!request_handler.finished())
   {

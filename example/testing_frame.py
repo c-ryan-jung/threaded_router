@@ -21,7 +21,7 @@ def write_test():
         f.write(str(i) + " " + str(node_num1) + " " + str(node_num2) + " " + str(10) + " " + str(0) + "\n")
     f.close
 
-def subprocess_cmd(command):
+def subprocess_cmd(command): #Adapted from stackoverflow example
     process = subprocess.Popen(command,stdout=subprocess.PIPE, shell=True)
     proc_stdout = process.communicate()[0].strip()
     print(proc_stdout)
