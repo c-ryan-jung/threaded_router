@@ -82,7 +82,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 {
   mtx.lock();
   string glob_string = string(1, glob);
-  glob_string = glob_string + ".txt";
+  glob_string = glob_string + "_out.txt";
   ofstream read_out(glob_string);
   //read_out.open(glob_string, std::fstream::in);
   glob++;
