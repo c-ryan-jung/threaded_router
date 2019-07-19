@@ -5,7 +5,7 @@ import time
 import subprocess
 from statistics import mean
 
-trip_num = raw_input("How many trips?")
+trip_num = (int)input("How many trips?")
 
 
 
