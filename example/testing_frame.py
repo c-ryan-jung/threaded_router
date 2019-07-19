@@ -5,14 +5,14 @@ import time
 import subprocess
 from statistics import mean
 
-#trip_num = input("How many trips?")
+trip_num = input("How many trips?")
 
 
 
 
 def write_test():
     f = open("test-trip-file.txt", "+w")
-    for i in range(100):
+    for i in range(trip_num):
         node_num1 = random.randint(1,10)
         node_num2 = random.randint(1,10)
         while(node_num2 == node_num1):
