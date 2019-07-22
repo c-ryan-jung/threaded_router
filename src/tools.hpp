@@ -233,6 +233,7 @@ public:
             temp.clear();
 
         }
+        cout<< big_list.size() << endl;
         return big_list;
     }
 };
