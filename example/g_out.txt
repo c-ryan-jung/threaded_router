@@ -1,0 +1,2 @@
+Found 2 NFAs
+NFA: 0	./nfa-mode-w.txt

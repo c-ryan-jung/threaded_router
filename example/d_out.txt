@@ -1,0 +1,6 @@
+Found 2 NFAs
+NFA: 0	./nfa-mode-w.txt
+NFA: 1	./nfa-mode-waw.txt
+Status.
+Status..
+Status...
