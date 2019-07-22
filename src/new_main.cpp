@@ -28,7 +28,6 @@ using namespace log4cplus;
 
 Event_Handler event_handler;
 char glob = 'a';
-int thread_count = 0;
 
 std::mutex mtx;
 std::mutex mtx1;
@@ -87,8 +86,12 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   ofstream read_out(glob_string);
   //read_out.open(glob_string, std::fstream::in);
   glob++;
+<<<<<<< HEAD
   thread_count++;
   mtx.unlock();*/
+=======
+  mtx.unlock();
+>>>>>>> e90d0057dc2297d8049578be8601d9b844daac08
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
@@ -322,22 +325,17 @@ int main(int argc, char *argv[])
   {
     entry.join();
   }
-  ofstream count;
-  
-  
   //the start of the threaded method
   /* vector <Trip_Request> thing = request_handler.thread_request();
   int half_size = thing.size()/2;
   vector <Trip_Request> thing1(thing.begin(), thing.begin() + half_size);
   vector <Trip_Request> thing2(thing.begin()+ half_size, thing.end());
   std::thread test(thread_method, std::ref(request_handler), thing1, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-  std::thread test1(thread_method, std::ref(request_count.open("1_out.txt");handler), thing2, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
+  std::thread test1(thread_method, std::ref(request_handler), thing2, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
   test.join();
   test1.join();*/
 
   out_file.close();
-  count.open("1_out.txt");
-  count << "Thread count: " << thread_count << endl;
-  count.close();
+
   return 0;
 }
