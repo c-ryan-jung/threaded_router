@@ -86,7 +86,16 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   ofstream read_out(glob_string);
   //read_out.open(glob_string, std::fstream::in);
   glob++;
+<<<<<<< HEAD
   mtx.unlock();*/
+=======
+<<<<<<< HEAD
+  thread_count++;
+  mtx.unlock();*/
+=======
+  mtx.unlock();
+>>>>>>> e90d0057dc2297d8049578be8601d9b844daac08
+>>>>>>> f72b7be4fbfa09c7e4ba8c549b261f8f3670312e
   Request_Handler request_handler;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
@@ -115,34 +124,34 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
 
     file >> nNFAs;
     // cout << "Found " << nNFAs << " NFAs" << endl;
-    read_out << "Found " << nNFAs << " NFAs" << endl;
+    //read_out << "Found " << nNFAs << " NFAs" << endl;
     file.get();
 
     for (unsigned int i = 0; (int)i < nNFAs; ++i)
     {
       file.getline(buffer, 5000, '\n');
       //cout << "NFA: " << i << "\t" << buffer << endl;
-      read_out << "NFA: " << i << "\t" << buffer << endl;
+      //read_out << "NFA: " << i << "\t" << buffer << endl;
       NFA_Graph *nfa = new NFA_Graph(buffer, network);
       nfaVector.push_back(nfa);
     }
   }
 
   //cout << "Status." << endl;
-  read_out << "Status." << endl;
+  //read_out << "Status." << endl;
 
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
 
   //cout << "Status.." << endl;
-  read_out << "Status.." << endl;
+  //read_out << "Status.." << endl;
 
-  event_handler.set_graph(network);
+  //event_handler.set_graph(network);
 
   //cout << "Status..." << endl;
 
-  read_out << "Status..." << endl;
+  //read_out << "Status..." << endl;
 
   // initialize request handler
 
@@ -152,7 +161,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   //put a thing here -----------------------v change  that
   vector<Trip_Request> trip_list = trips;
   //cout << "Status...." << endl;
-  read_out << "Status...." << endl;
+  //read_out << "Status...." << endl;
 
   while (!trip_list.empty())
   {
@@ -187,7 +196,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
       LOG4CPLUS_ERROR(main_logger, error_message);
 
     trip_list.pop_back();
-    read_out.close();
+    //read_out.close();
   }
   /* while (!request_handler.finished())
   {
@@ -296,7 +305,7 @@ int main(int argc, char *argv[])
   Network_Graph network(network_filename, coords_filename);
 
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
-
+  event_handler.set_graph(network);
   //splitting everything up into threads
   vector<vector<Trip_Request>> big_list = request_handler.thread_request();
   vector<std::thread> threads;
