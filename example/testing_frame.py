@@ -7,10 +7,6 @@ from statistics import mean
 
 trip_num =input("How many trips? ")
 
-
-
-
-
 def write_test():
     f = open("test-trip-file.txt", "+w")
     for i in range(int(trip_num)):
@@ -29,7 +25,7 @@ def subprocess_cmd(command): #Adapted from stackoverflow example
 write_test()
 subprocess_cmd("cd ../src; make; cd ../example;")
 result_list = []
-for i  in range(1):
+for i  in range(100):
     start = time.time()
     subprocess_cmd("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt")
     test = time.time() - start
