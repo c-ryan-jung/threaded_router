@@ -161,7 +161,7 @@ public:
     }
 
     //condensed request
-    vector<vector<Trip_Request>> thread_request()
+    vector<vector<Trip_Request>> thread_request(int core_num)
     {
         vector<Trip_Request> request_vector;
         if (!stream_filename)
