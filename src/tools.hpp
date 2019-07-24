@@ -166,7 +166,7 @@ public:
         vector<Trip_Request> request_vector;
         if (!stream_filename)
         {
-            cout << "No filename for pairs given. Bye!" << endl; 
+            cout << "No filename for pairs given. Bye!" << endl;
             exit(-1);
         }
 
@@ -182,7 +182,6 @@ public:
         long int t_id, src, dest, nfaID;
         double t0;
 
-        
         do
         {
             trip_stream >> t_id >> src >> dest >> t0 >> nfaID;
@@ -191,7 +190,7 @@ public:
                 requests_finished = true;
                 continue;
             }
-            
+
             trip_request.id = t_id;
             trip_request.source = src;
             trip_request.destination = dest;
@@ -200,40 +199,45 @@ public:
             request_vector.push_back(trip_request);
             //cout<<"okay"<<endl;
         } while (!finished());
-
         unsigned long const cores = std::thread::hardware_concurrency();
-        cout<<cores<<endl;
+        if (core_num != NULL)
+        {
+            cores = (unsigned long const)core_num;
+        }
         int vec_size = 0;
         int test = request_vector.size();
-        if(test < (int) cores){
+        if (test < (int)cores)
+        {
             vec_size = 1;
         }
-        else{
-            vec_size = test/(int)cores;
+        else
+        {
+            vec_size = test / (int)cores;
         }
         int count = 0;
         vector<Trip_Request> temp;
         vector<vector<Trip_Request>> big_list;
-        while(!request_vector.empty()){
-            
-            if(count >= vec_size){
+        while (!request_vector.empty())
+        {
+
+            if (count >= vec_size)
+            {
                 count = 0;
                 big_list.push_back(temp);
                 temp.clear();
-
             }
-            else{
-            temp.push_back(request_vector.back());
-            request_vector.pop_back();
-            count++;
+            else
+            {
+                temp.push_back(request_vector.back());
+                request_vector.pop_back();
+                count++;
             }
         }
-        if(!temp.empty()){
+        if (!temp.empty())
+        {
             big_list.push_back(temp);
             temp.clear();
-
         }
-        cout<< big_list.size() << endl;
         return big_list;
     }
 };

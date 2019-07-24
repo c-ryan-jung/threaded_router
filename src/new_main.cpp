@@ -76,7 +76,6 @@ void print_usage()
        << " -t <time>    time of departure" << endl;
 }
 
-
 //Threaded trip request processing
 void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
@@ -244,6 +243,7 @@ int main(int argc, char *argv[])
 
   // parse command-line arguments
   int c;
+  int core_num;
   Trip_Request request;
   request.start_time = 0;
   Request_Handler request_handler;
@@ -267,6 +267,8 @@ int main(int argc, char *argv[])
     case 'c':
       coords_filename = optarg;
       break;
+    case 'e':
+      core_num = optarg;
     case 'f':
       request_handler.set_mode(FILE_PAIRS);
       pairs_filename = optarg;
@@ -310,8 +312,6 @@ int main(int argc, char *argv[])
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-
-  cout<<big_list.size()<<endl;
 
   for (int i = 0; i < big_list.size(); i++)
   {

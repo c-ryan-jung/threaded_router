@@ -32,4 +32,7 @@ for i  in range(100):
     result_list.append(test)
     print(test)
 
+print("Trip Requests: " + str(trip_num))
+print("Thread/core count: ")
 print("Average time(sec): " + str(mean(result_list)))
+print("Total time: " + str(sum(result_list)))
