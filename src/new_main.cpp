@@ -88,7 +88,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
   glob++;
 <<<<<<< HEAD
   mtx.unlock();*/
-  thread_count++;
+  //thread_count++;
   Request_Handler request_handler;
   Plan plan;
   request_handler.set_mode(FILE_PAIRS);
