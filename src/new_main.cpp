@@ -278,14 +278,13 @@ int main(int argc, char *argv[])
       nfa_collection_filename = optarg;
       singleNFA = 0;
       break;
-
+    case 's':
+      core_num = atoi(optarg);
     case 't':
       request.start_time = atoi(optarg);
       request_handler.set_mode(SINGLE);
       break;
-    case 'z':
-      core_num = atoi(optarg);
-    }
+        }
   }
 
   // control output
