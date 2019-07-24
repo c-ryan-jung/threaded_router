@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+import sys
 import random
 
 trip_num =input("How many trips? ")
