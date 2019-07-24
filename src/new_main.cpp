@@ -165,7 +165,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
     float distance = 0.0;
 
     plan.path.clear();
-    event_handler.clear();
+    //event_handler.clear();
 
     double time_elapsed;
 
