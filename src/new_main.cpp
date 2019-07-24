@@ -28,7 +28,6 @@ using namespace log4cplus;
 
 Event_Handler event_handler;
 char glob = 'a';
-int core_num;
 std::mutex mtx;
 std::mutex mtx1;
 /// Logger.
@@ -243,6 +242,7 @@ int main(int argc, char *argv[])
 
   // parse command-line arguments
   int c;
+  int core_num = 0;
   Trip_Request request;
   request.start_time = 0;
   Request_Handler request_handler;
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
   event_handler.set_graph(network);
   //splitting everything up into threads
-  vector<vector<Trip_Request>> big_list = request_handler.thread_request();
+  vector<vector<Trip_Request>> big_list = request_handler.thread_request(core_num);
   vector<std::thread> threads;
 
   out_file.open(out_filename);
