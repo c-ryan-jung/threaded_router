@@ -24,7 +24,7 @@ def write_test():
 def subprocess_cmd(command): #Adapted from stackoverflow example
     process = subprocess.Popen(command,stdout=subprocess.PIPE, shell=True)
     proc_stdout = process.communicate()[0].strip()
-    #print(proc_stdout)
+    print(proc_stdout)
 
 write_test()
 subprocess_cmd("cd ../src; make; cd ../example;")
