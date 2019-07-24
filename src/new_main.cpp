@@ -284,7 +284,7 @@ int main(int argc, char *argv[])
       request.start_time = atoi(optarg);
       request_handler.set_mode(SINGLE);
       break;
-        }
+    }
   }
 
   // control output
@@ -310,7 +310,7 @@ int main(int argc, char *argv[])
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-
+  cout << "Thread Count: " << big_list.size() << endl;
   for (int i = 0; i < big_list.size(); i++)
   {
     //current problem
