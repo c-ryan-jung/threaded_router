@@ -28,7 +28,7 @@ using namespace log4cplus;
 
 Event_Handler event_handler;
 char glob = 'a';
-
+int core_num;
 std::mutex mtx;
 std::mutex mtx1;
 /// Logger.
@@ -243,7 +243,6 @@ int main(int argc, char *argv[])
 
   // parse command-line arguments
   int c;
-  int core_num;
   Trip_Request request;
   request.start_time = 0;
   Request_Handler request_handler;
