@@ -78,7 +78,7 @@ void print_usage()
 
 
 //Threaded trip request processing
-void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan plan, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
   /* mtx.lock();
   string glob_string = string(1, glob);
@@ -88,15 +88,9 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Plan 
   glob++;
 <<<<<<< HEAD
   mtx.unlock();*/
-=======
-<<<<<<< HEAD
   thread_count++;
-  mtx.unlock();*/
-=======
-  mtx.unlock();
->>>>>>> e90d0057dc2297d8049578be8601d9b844daac08
->>>>>>> f72b7be4fbfa09c7e4ba8c549b261f8f3670312e
   Request_Handler request_handler;
+  Plan plan;
   request_handler.set_mode(FILE_PAIRS);
   request_handler.set_stream(pairs_filename);
   vector<NFA_Graph *> nfaVector;
@@ -253,7 +247,7 @@ int main(int argc, char *argv[])
   Trip_Request request;
   request.start_time = 0;
   Request_Handler request_handler;
-  Plan plan;
+  //Plan plan;
   ifstream pairs_file;
   ofstream out_file;
   unsigned int algorithm = STD;
@@ -322,7 +316,7 @@ int main(int argc, char *argv[])
   for (int i = 0; i < big_list.size(); i++)
   {
     //current problem
-    threads.push_back(std::thread(thread_method, pairs_filename, std::ref(big_list[i]), plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
+    threads.push_back(std::thread(thread_method, pairs_filename, std::ref(big_list[i]), std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
   }
 
   for (auto &entry : threads)
