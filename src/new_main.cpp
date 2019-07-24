@@ -258,7 +258,7 @@ int main(int argc, char *argv[])
   algorithm = STD;
 
   //cleaned up parsing
-  while ((c = getopt(argc, argv, "a:c:d:e:f:g:ilnN:o:p:r:s:t:v:z")) != -1)
+  while ((c = getopt(argc, argv, "a:c:d:f:g:ilnN:o:p:r:s:t:v:z")) != -1)
   {
 
     switch (c)
@@ -266,8 +266,6 @@ int main(int argc, char *argv[])
     case 'c':
       coords_filename = optarg;
       break;
-    case 'e':
-      core_num = atoi(optarg);
     case 'f':
       request_handler.set_mode(FILE_PAIRS);
       pairs_filename = optarg;
@@ -285,6 +283,8 @@ int main(int argc, char *argv[])
       request.start_time = atoi(optarg);
       request_handler.set_mode(SINGLE);
       break;
+    case 'z':
+      core_num = atoi(optarg);
     }
   }
 
