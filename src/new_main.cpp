@@ -258,7 +258,7 @@ int main(int argc, char *argv[])
   algorithm = STD;
 
   //cleaned up parsing
-  while ((c = getopt(argc, argv, "a:c:d:f:g:ilnN:o:p:r:s:t:v:z")) != -1)
+  while ((c = getopt(argc, argv, "a:c:d:e:f:g:ilnN:o:p:r:s:t:v:z")) != -1)
   {
 
     switch (c)
