@@ -268,7 +268,7 @@ int main(int argc, char *argv[])
       coords_filename = optarg;
       break;
     case 'e':
-      core_num = optarg;
+      core_num = atoi(optarg);
     case 'f':
       request_handler.set_mode(FILE_PAIRS);
       pairs_filename = optarg;
