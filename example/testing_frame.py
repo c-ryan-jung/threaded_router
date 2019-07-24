@@ -30,5 +30,6 @@ for i  in range(100):
     subprocess_cmd("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt")
     test = time.time() - start
     result_list.append(test)
+    print(test)
 
 print("Average time(sec): " + str(mean(result_list)))
