@@ -199,24 +199,20 @@ public:
             request_vector.push_back(trip_request);
             //cout<<"okay"<<endl;
         } while (!finished());
-        int cores = 0;
-        if (core_num = 0 || (int)std::thread::hardware_concurrency() < core_num)
-        {
-            cores = (int)std::thread::hardware_concurrency();
-        }
-        else
+        int cores = (int)std::thread::hardware_concurrency();
+        if (core_num != 0 && core_num <= cores)
         {
             cores = core_num;
         }
         int vec_size = 0;
         int test = request_vector.size();
-        if (test < (int)cores)
+        if (test < cores)
         {
             vec_size = 1;
         }
         else
         {
-            vec_size = test / (int)cores;
+            vec_size = test / cores;
         }
         int count = 0;
         vector<Trip_Request> temp;
