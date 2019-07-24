@@ -31,4 +31,4 @@ for i  in range(100):
     test = time.time() - start
     result_list.append(test)
 
-print("Average time(sec): " + mean(result_list))
+print("Average time(sec): " + str(mean(result_list)))
