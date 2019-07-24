@@ -1,13 +1,21 @@
-avg_time_alt() { 
-    local -i n=$1
-    local foo real sys user
-    shift
-    (($# > 0)) || return;
-    { read foo real; read foo user; read foo sys ;} < <(
-        { time -p for((;n--;)){ "$@" &>/dev/null ;} ;} 2>&1
-    )
-    printf "real: %.5f\nuser: %.5f\nsys : %.5f\n" $(
-        bc -l <<<"$real/$n;$user/$n;$sys/$n;" )
+avg_time() {
+    #
+    # usage: avg_time n command ...
+    #
+    n=$1; shift
+    (($# > 0)) || return                   # bail if no command given
+    for ((i = 0; i < n; i++)); do
+        { time -p "$@" &>/dev/null; } 2>&1 # ignore the output of the command
+                                           # but collect time's output in stdout
+    done | awk '
+        /real/ { real = real + $2; nr++ }
+        /user/ { user = user + $2; nu++ }
+        /sys/  { sys  = sys  + $2; ns++}
+        END    {
+                 if (nr>0) printf("real %f\n", real/nr);
+                 if (nu>0) printf("user %f\n", user/nu);
+                 if (ns>0) printf("sys %f\n",  sys/ns)
+               }'
 }
 
 cd ../src
@@ -15,6 +23,6 @@ make
 cd ../example
 ./trip_maker.py
 
-avg_time_alt 3 ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt
+avg_time 3 ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt
 #time for i in {1..$varname}; do ../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt ; done
 
