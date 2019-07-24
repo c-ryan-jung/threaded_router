@@ -33,9 +33,10 @@ for i  in range(100):
     subprocess_cmd(comm)
     test = time.time() - start
     result_list.append(test)
-    print(test)
+    #print(test)
 
 print("Trip Requests: " + str(trip_num))
 print("Thread/core count: " + str(core_c))
+print("Trials: 100")
 print("Average time(sec): " + str(mean(result_list)))
 print("Total time: " + str(sum(result_list)))
