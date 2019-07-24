@@ -199,10 +199,14 @@ public:
             request_vector.push_back(trip_request);
             //cout<<"okay"<<endl;
         } while (!finished());
-        unsigned long const cores = std::thread::hardware_concurrency();
-        if (core_num != NULL)
+        int cores = 0;
+        if (core_num = 0 || (int)std::thread::hardware_concurrency() < core_num)
         {
-            cores = (unsigned long const)core_num;
+            cores = (int)std::thread::hardware_concurrency();
+        }
+        else
+        {
+            cores = core_num;
         }
         int vec_size = 0;
         int test = request_vector.size();
