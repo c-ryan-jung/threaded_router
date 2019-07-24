@@ -5,11 +5,11 @@ import time
 import subprocess
 from statistics import mean
 
-trip_num =input("How many trips? ")
 
-def write_test():
+
+def write_test(num):
     f = open("test-trip-file.txt", "+w")
-    for i in range(int(trip_num)):
+    for i in range(int(num)):
         node_num1 = random.randint(1,10)
         node_num2 = random.randint(1,10)
         while(node_num2 == node_num1):
@@ -22,17 +22,20 @@ def subprocess_cmd(command): #Adapted from stackoverflow example
     proc_stdout = process.communicate()[0].strip()
     #print(proc_stdout)
 
-write_test()
+trip_num =input("How many trips? ")
+write_test(trip_num)
+core_c =input("How many cores? ")
 subprocess_cmd("cd ../src; make; cd ../example;")
 result_list = []
 for i  in range(100):
+    comm = ("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt -s" + " " + str(core_c))
     start = time.time()
-    subprocess_cmd("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt")
+    subprocess_cmd(comm)
     test = time.time() - start
     result_list.append(test)
     print(test)
 
 print("Trip Requests: " + str(trip_num))
-print("Thread/core count: ")
+print("Thread/core count: " + str(core_c))
 print("Average time(sec): " + str(mean(result_list)))
 print("Total time: " + str(sum(result_list)))
