@@ -72,6 +72,7 @@ void print_usage()
        << " -f <pairs>   pairs from file" << endl
        << " -g <graph>   graph (edge) file" << endl
        << " -N <NFAFile> file specifying nfa collection" << endl
+       << " -s <core count> specifying how many cores used" << endl
        << " -t <time>    time of departure" << endl;
 }
 
