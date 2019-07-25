@@ -32,7 +32,7 @@ print("Trials: 100")
 print("Trip Requests: 1000")
 with open('test_data.csv', 'w') as f1:
     writer = csv.writer(f1, delimiter='\t',lineterminator='\n',)
-    writer.writerow(["1 Core"] + ["2 Cores"] + ["4 Cores"] + ["8 Cores"])
+    writer.writerow(["1 Core", "2 Cores", "4 Cores", "8 Cores"])
     for core in core_c:
         result_list = []
         for j in range(100):
