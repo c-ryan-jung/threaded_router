@@ -34,17 +34,19 @@ with open('test_data.csv', 'w') as f1:
     writer = csv.writer(f1, delimiter='\t',lineterminator='\n',)
     writer.writerow(['']+["1 Core"] + ["2 Cores"] + ["4 Cores"] + ["8 Cores"])
     for core in core_c:
-        result_list = [('')]
+        result_list = []
         for j in range(100):
             comm = ("../src/new_main -g network-links.txt -c network-nodes.txt -N nfa_main.txt -t 12 -f test-trip-file.txt -s" + " " + str(core))
             start = time.time()
             subprocess_cmd(comm)
             test = time.time() - start
             result_list.append(test)
-        print("Average time of " + str(core) + " Core(s):" + str(mean(result_list)) + " secs.")
+        avg = mean(result_list)
+        print("Average time of " + str(core) + " Core(s):" + str(avg) + " secs.")
         total_list.append(sum(result_list))
-        avg_list.append(mean(result_list))
-        master_list.append(result_list)
+        avg_list.append(avg)
+        dummy_list = [('') + result_list]
+        master_list.append[dummy_list]
     writer.writerow(["Averages"] + avg_list)
     writer.writerows(zip(*master_list))
 print("Total time: " + str(sum(total_list)) + " secs")
