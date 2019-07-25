@@ -45,8 +45,8 @@ with open('test_data.csv', 'w') as f1:
         print("Average time of " + str(core) + " Core(s):" + str(avg) + " secs.")
         total_list.append(sum(result_list))
         avg_list.append(avg)
-        dummy_list = [(None) + result_list]
-        master_list.append[dummy_list]
+        result_list.insert(0,None)
+        master_list.append[result_list]
     writer.writerow(["Averages"] + avg_list)
     writer.writerows(zip(*master_list))
 print("Total time: " + str(sum(total_list)) + " secs")
