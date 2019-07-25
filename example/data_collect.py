@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-import os
-import glob
-import pandas as pd
+#import os
+#import glob
+#import pandas as pd
 import sys
 import random
 import time
@@ -34,7 +34,7 @@ def master_test(requests, number):
     core_c = [1,2,4,8]
     print("Timing test " + str(number))
     print("Trials: 100")
-    print("Trip Requests: 1000")
+    print("Trip Requests: " + str(requests))
     string = "test_data" + str(number) + ".csv"
     with open(string, 'w') as f1:
         writer = csv.writer(f1, dialect='excel')
@@ -66,9 +66,9 @@ master_test(10000,2)
 master_test(100000, 3)
 
 #Merge produced CSV files
-extension = 'csv'
-all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
-combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
-combined_csv.to_csv( "combined_csv.csv", index=False, encoding='utf-8-sig')
+#extension = 'csv'
+#all_filenames = [i for i in glob.glob('*.{}'.format(extension))]
+#combined_csv = pd.concat([pd.read_csv(f) for f in all_filenames])
+#combined_csv.to_csv( "combined_csv.csv", index=False, encoding='utf-8-sig')
 
 exit()
