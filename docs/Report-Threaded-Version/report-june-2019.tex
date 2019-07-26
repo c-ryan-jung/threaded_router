@@ -1,0 +1,243 @@
+%%
+%% HSM: June 2019
+%%
+
+\documentclass[english]{article}
+
+%% \usepackage[latin9]{inputenc}
+%% \usepackage{babel}
+%%
+%% other packages
+\usepackage[all,cmtip]{xy}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{xspace}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{thmtools}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[square,sort&compress,numbers]{natbib}
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{hyperref}
+\newcommand{\TODO}[1]{\todo[inline,color=red!10,size=\small]{#1}}
+\renewcommand\thmcontinues[1]{Continued}
+%%
+%% ------------------------------------------------------------
+\graphicspath{{./}{./Figures/}}
+%% ------------------------------------------------------------
+%%
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+%%\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+%%
+\numberwithin{equation}{section}
+%%
+%% Layout:
+\parindent0pt
+\parskip6pt
+%%
+\renewcommand\labelitemi{\rule[0.12em]{0.4em}{0.4em}}
+\renewcommand\labelitemii{\normalfont\bfseries \rule[0.15em]{0.3em}{0.3em}}
+
+\def\EpiHiper{EpiHiper\xspace}
+\def\EpiHiperVersion{1.0\xspace}
+\def\rh#1{\hfill#1\hfill}
+\def\thed#1{\textbf{#1}}
+\def\hsp{\phantom{$\int\limits_a^b$}}
+\def\SciDuct{SciDuct\xspace}
+
+%%
+%% Macros:
+
+% Figure size.
+\newcommand{\figsize}{0.27}
+\newcommand{\expect}{\mathbb{E}}
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}}
+\def\th{\ensuremath{{}^\protect\text{\scriptsize th}}\xspace}
+
+%% ----------------------------------------------------------------------
+\begin{document}
+%% ----------------------------------------------------------------------
+\begin{titlepage}
+\raggedleft\raggedbottom
+\rule{1pt}{\textheight} % Vertical line
+\hspace{0.05\textwidth} % Whitespace between the vertical line and title page text
+%%
+\parbox[b]{0.75\textwidth}{ % Paragraph box for holding the title page text, adjust the width to move the title page left or right on the page
+  {\huge\bfseries NFA Threaded Router:\\[1ex]
+    Design, Documentation, \\[1ex] and Scaling Studies}\\[9\baselineskip]
+%%
+{{\Large\textsc{Author(s):}\\[1ex]
+%%
+\phantom{\quad}Ryan Jung\\[1ex]
+%%
+\phantom{\quad}Henning S. Mortveit\\[1ex]
+%%
+}}\\[4\baselineskip]
+%%
+{{\Large\textsc{NSSAC Technical Report: No. 2019-TBD}}}\\[2\baselineskip]
+%%
+{{\Large\textsc{Status: \emph{Approved for NSSAC Internal Release}}}}\\[2\baselineskip]
+%%
+{{\Large\textsc{Contact:}\\[1ex]\phantom{\quad}Henning S. Mortveit (Henning.Mortveit@virginia.edu)}}\\[2\baselineskip]
+%%
+{{\Large\textsc{GitHub URL:}\\[1ex]\phantom{\quad}https://github.com/NSSAC/RE\_Router}}\\[7\baselineskip]
+%%
+\vspace*{\fill}
+\vfill
+%%
+Network Systems Science and Advanced Computing\\
+Biocomplexity Institute and Initiative\\
+University of Virginia
+}
+\end{titlepage}
+%% ----------------------------------------------------------------------
+
+
+%%
+\title{NFA Threaded Router: \\Design, Documentation, and Scaling Studies}
+%%
+\author{
+Ryan Jung${}^a$ and
+%%
+Henning S. Mortveit${}^{a,b,\dag}$\footnote{$^\dag$
+  Corresponding author: Henning S. Mortveit;\hfil\break
+  email: henning.mortveit@virginia.edu;\hfil\break
+  github URL: https://github.com/NSSAC/RE\_Router\hfil\break
+  NSSAC Technical Report: No. TR 2019--TBD
+}\\
+%%
+\\[1ex]\\
+${}^a$Network Systems Science and Advanced Computing;\\
+%%
+${}^b$Department of Engineering Science and Environment;\\
+%%
+%%${}^c$Department of Computer Science;\\
+%%
+%%
+University of Virginia
+}
+\maketitle
+
+
+%%\keywords{Keywords: To add}
+%%
+\begin{abstract}
+This technical report covers the threaded implementatin of the regular
+expression (or NFA) constrained router of Jakob et al.
+
+To be completed.
+
+\end{abstract}
+%%
+
+%% ----------------------------------------------------------------------
+\section*{Introduction}
+\label{sec:introduction}
+
+Describe the algorithm of Jakob et al~\cite{Barrett:00}.
+
+\textbf{Report organization.} Section~\ref{sec:design} gives the
+... Section~\ref{sec:scalingstudies} presents ... We conclude in
+Section~\ref{sec:documentation} providing complete user instructions
+as well as deploy constructions.
+
+%% ----------------------------------------------------------------------
+\section{Design}
+\label{sec:design}
+
+Give a careful diagram of the software design. You can treat the
+router as a black box, no need to go into details for this part.
+
+
+%% ----------------------------------------------------------------------
+\section{Scaling Studies}
+\label{sec:scalingstudies}
+
+Outline of work:
+\begin{itemize}
+\item Construct e.g. a Python tool that takes as argument the node
+  file of a network, and an integer $N$, and that produces a complete
+  trip request file containing $N$ random trips. They will all have
+  travel mode $0$ which correponds to automobile. It will likely be
+  useful to have trip request files with 100, 1,000, 10,000, 100,000,
+  and 1,000,000 requests. For testing, use the smaller request files;
+  for the serious scaling studies, use the larger one.
+\item Create a timing framework that can time and report the execution
+  of the router. It may be helpful to separately time initialization
+  code such as construction of networks.
+\item Create a timing diagram giving time needed for computation as a
+  function of the number of requested compute threads. Conclusions?
+  Linear scaling? If not, why not? What happens if you request more
+  threads than there are available cores? For each timing run, there
+  may be fluctations due to other computations running on your
+  computer/Rivanna. It will likely be useful to at least conduct two
+  runs per setting.
+\item If time permits, conduct a scaling study on Rivanna using
+  multiple nodes.
+
+\end{itemize}
+
+
+%% ----------------------------------------------------------------------
+\bibliographystyle{amsplain}
+\bibliography{references}
+
+%% ----------------------------------------------------------------------
+
+\cleardoublepage
+\appendix
+
+%% ----------------------------------------------------------------------
+\section{RE\_Router User Documentation}
+\label{sec:documentation}
+
+\TODO{HSM: may include deployment; running on a desktop; running on
+  Rivanna using Slurm}
+
+\TODO{HSM: Fix the following}
+
+\begin{verbatim}
+./EpiHiper -seed <integerNumericValue> -dbconn <jsonString> -config <configFilename>
+
+  -seed: an optional non-negative integer to be used as seed for
+    random number generation. It will be used by process 0 which in turn
+    will generate and communicate random seed values to all remaining processes.
+
+  -config: a required string specifying the EpiHiper configuration
+   file. The configuration file must conform to the JSON schema for the
+   EpiHiper input configuration.
+
+  -dbconn: a string argument giving the JSON structure with information required to
+    establish the database connection to the person trait database. This argument is
+    required if any configuration file references a person trait database.
+\end{verbatim}
+
+
+%% ----------------------------------------------------------------------
+
+
+\subsection{Input Files}
+\label{sec:inputfiles}
+
+The router uses the following input files:
+\begin{itemize}
+\item Network node file
+\item Network link file
+\item Etc ... to be completed.
+\end{itemize}
+
+
+
+
+\end{document}
