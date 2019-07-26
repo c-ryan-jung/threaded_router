@@ -2,7 +2,7 @@
 %% HSM: June 2019
 %%
 
-\documentclass[english]{article}
+\documentclass[English]{article}
 
 %% \usepackage[latin9]{inputenc}
 %% \usepackage{babel}
@@ -17,6 +17,7 @@
 \usepackage{thmtools}
 \usepackage{amssymb}
 \usepackage{color}
+\usepackage{float}
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage[square,sort&compress,numbers]{natbib}
@@ -133,10 +134,10 @@ University of Virginia
 %%\keywords{Keywords: To add}
 %%
 \begin{abstract}
-This technical report covers the threaded implementatin of the regular
+This technical report covers the threaded implementation of the regular
 expression (or NFA) constrained router of Jakob et al.
 
-To be completed.
+Previously built router using regular expression, was modified to be able to run parallel instances, so that multiple requests could be handled at once.
 
 \end{abstract}
 %%
@@ -145,20 +146,49 @@ To be completed.
 \section*{Introduction}
 \label{sec:introduction}
 
-Describe the algorithm of Jakob et al~\cite{Barrett:00}.
+The algorithm used in this software involved taking an existing NFA and a graph to produce an auxiliary graph. Using this, a Dijkstra's algorthm is used to traverse the graph, but only with the edges of the vertexes have the same edge label that follow with the NFA. This allows for not only traversal with only a specific set of nodes, but allows also for a number of patterns that the program can map out.~\cite{Jacob Constrained Routing.}.
 
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+        \textsc{Algorithm RE-Constrained-Short-Paths}
+        \begin{itemize}
+            \item\textit{Input:} A Regular expression \textit{R}, a directed weighted graph \textit{G}, a  source \textit{s}, and a destination \textit{d}
+            \item \begin{enumerate}
+                \item Construct an NFA
+                \item Construct the NFA \textit{M(G)} of \textit{G}
+                \item Construct \textit{M(G) X M(R)}. The length of the edges in the product graph is chosen to be equal to the edges in the corresponding graph \textit{G}
+                \item Starting from state \textit{(s\textsubscript{0}, s)}, find a shortest path to the vertices \textit{(f, d)}, where \textit{$f \in $F}. Denote these paths by \textit{p\textsubscript{i}}, \textit{$l \leq i \leq $w}. Also denote the cost of \textit{p\textsubscript{i}} by \textit{w(p\textsubscript{i})}.
+                \item \textit{C\textsuperscript{*} :=} min\textsubscript{pi}, \textit{w(p\textsubscript{i})}; \textit{p\textsuperscript{*}: w(p\textsuperscript{*}) = C\textsuperscript{*}}.
+                (If \textit{p\textsubscript{*} is not uniquely determined, we choose an arbitrary one.}
+            \end{enumerate}
+            \item \textit{Output:} The path \textit{p\textsuperscript{*}} in \textit{G} from\textit{s} to \textit{d} of minimum length subject to the constraint that of \textit{$l(p) \in $L(R)}
+        \end{itemize}
+        
+    }%
+}
 \textbf{Report organization.} Section~\ref{sec:design} gives the
-... Section~\ref{sec:scalingstudies} presents ... We conclude in
+software design of the solution Section~\ref{sec:scalingstudies} presents the methodology of the testing and Section~\ref{sec:results} presents the data and possible explanations
 Section~\ref{sec:documentation} providing complete user instructions
 as well as deploy constructions.
+
+
 
 %% ----------------------------------------------------------------------
 \section{Design}
 \label{sec:design}
-
-Give a careful diagram of the software design. You can treat the
-router as a black box, no need to go into details for this part.
-
+The basis of the design takes from the original implementation. Quite simply, the focus is on the critical portion of the code base where:
+\begin{itemize}
+    \item The NFA is created
+    \item The trip requests are processed
+\end{itemize}
+Taking this, these implementations are stored in a callable method that can be stored in a thread. An additional method needed to be built that takes in the multiple thread requests and splits them up among however many threads the user decides to run. Alongside these changes, many legacy features were removed to help make the program more lightweight and simpler to understand. An option to allocate a certain number of cores was also added for testing purposes.
+The idea behind these changes is by allowing for threading and paralleling operations, the program can handle more requests more quickly and efficiently, making full use of a machine's capabilities. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=250]{design.png}
+    \caption{Design diagram}
+    \label{fig:design1}
+\end{figure}
 
 %% ----------------------------------------------------------------------
 \section{Scaling Studies}
@@ -169,9 +199,8 @@ Outline of work:
 \item Construct e.g. a Python tool that takes as argument the node
   file of a network, and an integer $N$, and that produces a complete
   trip request file containing $N$ random trips. They will all have
-  travel mode $0$ which correponds to automobile. It will likely be
-  useful to have trip request files with 100, 1,000, 10,000, 100,000,
-  and 1,000,000 requests. For testing, use the smaller request files;
+  travel mode $0$ which corresponds to automobile. It will likely be
+  useful to have trip request files with 1,000, 10,000, and 100,000, requests. For testing, use the smaller request files;
   for the serious scaling studies, use the larger one.
 \item Create a timing framework that can time and report the execution
   of the router. It may be helpful to separately time initialization
@@ -180,7 +209,7 @@ Outline of work:
   function of the number of requested compute threads. Conclusions?
   Linear scaling? If not, why not? What happens if you request more
   threads than there are available cores? For each timing run, there
-  may be fluctations due to other computations running on your
+  may be fluctuations due to other computations running on your
   computer/Rivanna. It will likely be useful to at least conduct two
   runs per setting.
 \item If time permits, conduct a scaling study on Rivanna using
@@ -188,11 +217,25 @@ Outline of work:
 
 \end{itemize}
 
+\section{Results}
+\label{sec:results}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=300]{data.png}
+    \caption{Design diagram}
+    \label{fig:design1}
+\end{figure}
+
+Interestingly, the results show that across the board utilizing only 2 cores would produce the best results. All these tests were performed on a local machine and the only explanation that could be thought of is that the OS is utilizing the other cores for other overhead operation which could cause a slowdown. Further testing on Rivanna with dedicated nodes and cores performing the tests seems like it would be necessary. This was not the expected result where it was initially hypothesized that the relationship between average time and core count would be logarithmic. Still using multiple cores is almost always faster than using one core (save for the test of 1000 trip requests). 
 
 %% ----------------------------------------------------------------------
-\bibliographystyle{amsplain}
-\bibliography{references}
 
+\begin{thebibliography}{9}
+\bibitem{Jacob Constrained Routing.}
+Chris Barret, Rico Jacob, and Madhav Marathe
+\textit{Formal Language Constrained Path Problems}
+Society for Industrial and Applied Mathematics, 2000
+\end{thebibliography}
 %% ----------------------------------------------------------------------
 
 \cleardoublepage
@@ -202,25 +245,33 @@ Outline of work:
 \section{RE\_Router User Documentation}
 \label{sec:documentation}
 
-\TODO{HSM: may include deployment; running on a desktop; running on
-  Rivanna using Slurm}
-
-\TODO{HSM: Fix the following}
 
 \begin{verbatim}
-./EpiHiper -seed <integerNumericValue> -dbconn <jsonString> -config <configFilename>
+./new_main -g <graph> -c <coords> -N <NFAFILE> -s <cores> -t <time> -f <pairs>
 
-  -seed: an optional non-negative integer to be used as seed for
-    random number generation. It will be used by process 0 which in turn
-    will generate and communicate random seed values to all remaining processes.
+  -c <coords>: coordinates (vertex) file
+  
+  -g <graph>: pairs from file
 
-  -config: a required string specifying the EpiHiper configuration
-   file. The configuration file must conform to the JSON schema for the
-   EpiHiper input configuration.
+  -N <NFAFile>:graph (edge) file
 
-  -dbconn: a string argument giving the JSON structure with information required to
-    establish the database connection to the person trait database. This argument is
-    required if any configuration file references a person trait database.
+  -s <cores>: specifiying how many cores (and consequently threads) are used
+  
+  -t <time>: time of departure
+  
+ plans.txt: output file returning request path traversal
+ 
+./trip_maker.py: prompts user for a number and creates that many trip requests
+
+./super_script.sh:runs program with newly created pairs file from trip_maker.py with 4 cores
+
+./testing_frame: prompts user for number of requests and number of cores. 
+   Runs 100 trials and returns the average time and all trial times to a .csv file
+
+./data_collect.py: runs 3 tests of 1000, 10,000, and 100,000 requests. Returns 3
+   .csv files with results
+
+  
 \end{verbatim}
 
 
@@ -234,7 +285,7 @@ The router uses the following input files:
 \begin{itemize}
 \item Network node file
 \item Network link file
-\item Etc ... to be completed.
+\item Trip Request file
 \end{itemize}
 
 
