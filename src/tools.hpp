@@ -161,7 +161,7 @@ public:
     }
 
     //condensed request
-    vector<vector<Trip_Request>> thread_request(int core_num)
+    vector<vector<Trip_Request> > thread_request(int core_num)
     {
         vector<Trip_Request> request_vector;
         if (!stream_filename)
@@ -216,7 +216,7 @@ public:
         }
         int count = 0;
         vector<Trip_Request> temp;
-        vector<vector<Trip_Request>> big_list;
+        vector<vector<Trip_Request> > big_list;
         while (!request_vector.empty())
         {
 
@@ -253,7 +253,7 @@ protected:
     vector<NFA_Graph *> &nfaVector;
 
     /// Routing engines.
-    vector<vector<Shortest_Path *>> dijkstra;
+    vector<vector<Shortest_Path *> > dijkstra;
 
 public:
     /// Constructor.
@@ -261,7 +261,7 @@ public:
     {
         const unsigned int nNFA = nfaVec.size();
 
-        dijkstra = vector<vector<Shortest_Path *>>(nNFA);
+        dijkstra = vector<vector<Shortest_Path *> >(nNFA);
 
         for (unsigned int i = 0; i < nNFA; ++i)
         {

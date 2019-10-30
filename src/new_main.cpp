@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
   event_handler.set_graph(network);
   //splitting everything up into threads
-  vector<vector<Trip_Request>> big_list = request_handler.thread_request(core_num);
+  vector<vector<Trip_Request> > big_list = request_handler.thread_request(core_num);
   vector<std::thread> threads;
 
   out_file.open(out_filename);

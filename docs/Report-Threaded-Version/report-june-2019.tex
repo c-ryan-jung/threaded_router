@@ -180,15 +180,42 @@ The basis of the design takes from the original implementation. Quite simply, th
 \begin{itemize}
     \item The NFA is created
     \item The trip requests are processed
+    \item The program outputs all the processed request to a text file
 \end{itemize}
 Taking this, these implementations are stored in a callable method that can be stored in a thread. An additional method needed to be built that takes in the multiple thread requests and splits them up among however many threads the user decides to run. Alongside these changes, many legacy features were removed to help make the program more lightweight and simpler to understand. An option to allocate a certain number of cores was also added for testing purposes.
 The idea behind these changes is by allowing for threading and paralleling operations, the program can handle more requests more quickly and efficiently, making full use of a machine's capabilities. 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=250]{design.png}
+    \includegraphics[scale = 0.5]{design.png}
     \caption{Design diagram}
     \label{fig:design1}
 \end{figure}
+
+Once these ideas were firmly set out, the critical sections of the code are as follows.
+
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.7]{Code.png}
+    \caption{Design diagram}
+    \label{fig:code1}
+\end{figure}
+Compared to the original codebase, it is quite similar, with much of the components being adpated from the original. Major differences include the addition of locks around file output to ensure thread safety.
+
+A custom "Thread Request" method was also created in to work in conjunction with the Thread method. The function of this is to split up a single request across an appropriate number of threads (can be user generated or defaulted to the number of cores existing on the machine) so that the work can be split up among them.
+
+\begin{figure}[!tbp]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{code1.png}
+    \caption{Thread Request.}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{code2.png}
+    \caption{Thread Request cont.}
+  \end{minipage}
+\end{figure}
+
 
 %% ----------------------------------------------------------------------
 \section{Scaling Studies}
@@ -221,7 +248,7 @@ Outline of work:
 \label{sec:results}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=300]{data.png}
+    \includegraphics{data.png}
     \caption{Design diagram}
     \label{fig:design1}
 \end{figure}
@@ -229,7 +256,8 @@ Outline of work:
 Interestingly, the results show that across the board utilizing only 2 cores would produce the best results. All these tests were performed on a local machine and the only explanation that could be thought of is that the OS is utilizing the other cores for other overhead operation which could cause a slowdown. Further testing on Rivanna with dedicated nodes and cores performing the tests seems like it would be necessary. This was not the expected result where it was initially hypothesized that the relationship between average time and core count would be logarithmic. Still using multiple cores is almost always faster than using one core (save for the test of 1000 trip requests). 
 
 %% ----------------------------------------------------------------------
-
+\bibliographystyle{amsplain}
+\bibliography{references}
 \begin{thebibliography}{9}
 \bibitem{Jacob Constrained Routing.}
 Chris Barret, Rico Jacob, and Madhav Marathe
@@ -283,9 +311,9 @@ Society for Industrial and Applied Mathematics, 2000
 
 The router uses the following input files:
 \begin{itemize}
-\item Network node file
-\item Network link file
-\item Trip Request file
+\item Network node file: The text file with specifications of node id and travel options
+\item Network link file: The text file that puts together the nodes
+\item Trip Request file: The text file that puts out specific travel routes
 \end{itemize}
 
 

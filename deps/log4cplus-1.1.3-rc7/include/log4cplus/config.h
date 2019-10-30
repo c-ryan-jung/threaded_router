@@ -16,7 +16,7 @@
 #define HAVE_CLOCK_GETTIME 1
 
 /* Define to 1 if you have the `clock_nanosleep' function. */
-#define HAVE_CLOCK_NANOSLEEP 1
+/* #undef HAVE_CLOCK_NANOSLEEP */
 
 /* Defined if the compiler provides C++11 <atomic> header and increment,
    decrement operations. */
@@ -41,7 +41,7 @@
 #define HAVE_GETADDRINFO 1
 
 /* */
-#define HAVE_GETHOSTBYNAME_R 1
+/* #undef HAVE_GETHOSTBYNAME_R */
 
 /* Define to 1 if you have the `getpid' function. */
 #define HAVE_GETPID 1
@@ -116,7 +116,7 @@
 #define HAVE_PIPE 1
 
 /* Define to 1 if you have the `pipe2' function. */
-#define HAVE_PIPE2 1
+/* #undef HAVE_PIPE2 */
 
 /* Define to 1 if you have the `poll' function. */
 #define HAVE_POLL 1
@@ -231,7 +231,7 @@
 #define LOG4CPLUS_HAVE_CLOCK_GETTIME 1
 
 /* */
-#define LOG4CPLUS_HAVE_CLOCK_NANOSLEEP 1
+/* #undef LOG4CPLUS_HAVE_CLOCK_NANOSLEEP */
 
 /* */
 #define LOG4CPLUS_HAVE_CXX11_ATOMICS 1
@@ -267,7 +267,7 @@
 #define LOG4CPLUS_HAVE_GETADDRINFO 1
 
 /* */
-#define LOG4CPLUS_HAVE_GETHOSTBYNAME_R 1
+/* #undef LOG4CPLUS_HAVE_GETHOSTBYNAME_R */
 
 /* */
 #define LOG4CPLUS_HAVE_GETPID 1
@@ -339,7 +339,7 @@
 #define LOG4CPLUS_HAVE_PIPE 1
 
 /* */
-#define LOG4CPLUS_HAVE_PIPE2 1
+/* #undef LOG4CPLUS_HAVE_PIPE2 */
 
 /* */
 #define LOG4CPLUS_HAVE_POLL 1
@@ -444,7 +444,7 @@
 /* #undef LOG4CPLUS_SINGLE_THREADED */
 
 /* */
-#define LOG4CPLUS_THREAD_LOCAL_VAR thread_local
+#define LOG4CPLUS_THREAD_LOCAL_VAR __thread
 
 /* */
 /* #undef LOG4CPLUS_USE_PTHREADS */
@@ -490,7 +490,7 @@
 #define STDC_HEADERS 1
 
 /* Defined to the actual TLS support construct. */
-#define TLS_SUPPORT_CONSTRUCT thread_local
+#define TLS_SUPPORT_CONSTRUCT __thread
 
 /* Substitute for socklen_t */
 /* #undef socklen_t */
