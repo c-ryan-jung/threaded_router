@@ -10,7 +10,7 @@
 #
 
 CC=g++
-FLAGS=-g -Wall -std=c++11 -stdlib=libc++ -Weverything
+FLAGS=-g -Wall -std=c++11
 OPT=-O2
 
 INCDIR=-I$(HOME)/include
