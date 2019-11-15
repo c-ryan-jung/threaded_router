@@ -1,0 +1,5 @@
+# NFA specification: The first line specifies the number of NFA specs that follows. In this case, the '1' will cause all remaining NFAs to be ignored. In a trip request file, 'n' refers to the line number of the accompanying NFA list files. Make sure it matches. Note that the file names must match exactly.
+1
+/Users/henning/github/TransportationNetworkRouting/Transportation/NFA/default_nfa_auto.txt
+/Users/henning/github/TransportationNetworkRouting/Transportation/NFA/default_nfa_walk.txt
+/Users/henning/github/TransportationNetworkRouting/Transportation/NFA/default_nfa_waw.txt
