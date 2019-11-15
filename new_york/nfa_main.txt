@@ -1,3 +1,0 @@
-./NFA_a.txt
-./NFA_w.txt
-./NFA_waw.txt
