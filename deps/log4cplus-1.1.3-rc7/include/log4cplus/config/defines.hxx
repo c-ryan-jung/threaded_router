@@ -75,7 +75,7 @@
 #define LOG4CPLUS_HAVE_GETADDRINFO 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_GETHOSTBYNAME_R */
+#define LOG4CPLUS_HAVE_GETHOSTBYNAME_R 1
 
 /* */
 #define LOG4CPLUS_HAVE_GETPID 1
@@ -90,7 +90,7 @@
 #define LOG4CPLUS_HAVE_NANOSLEEP 1
 
 /* Define to 1 if you have the `clock_nanosleep' function. */
-/* #undef LOG4CPLUS_HAVE_CLOCK_NANOSLEEP */
+#define LOG4CPLUS_HAVE_CLOCK_NANOSLEEP 1
 
 /* */
 #define LOG4CPLUS_HAVE_GMTIME_R 1
@@ -129,7 +129,7 @@
 #define LOG4CPLUS_HAVE_PIPE 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_PIPE2 */
+#define LOG4CPLUS_HAVE_PIPE2 1
 
 /* */
 #define LOG4CPLUS_HAVE_POLL 1
@@ -189,7 +189,7 @@
 
 /* Defined if the compiler provides C++11 <atomic> header and increment,
    decrement operations. */
-#define LOG4CPLUS_HAVE_CXX11_ATOMICS 1
+/* #undef LOG4CPLUS_HAVE_CXX11_ATOMICS */
 
 /* */
 #define LOG4CPLUS_HAVE_C99_VARIADIC_MACROS 1

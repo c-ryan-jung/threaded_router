@@ -16,11 +16,11 @@
 #define HAVE_CLOCK_GETTIME 1
 
 /* Define to 1 if you have the `clock_nanosleep' function. */
-/* #undef HAVE_CLOCK_NANOSLEEP */
+#define HAVE_CLOCK_NANOSLEEP 1
 
 /* Defined if the compiler provides C++11 <atomic> header and increment,
    decrement operations. */
-#define HAVE_CXX11_ATOMICS 1
+/* #undef HAVE_CXX11_ATOMICS */
 
 /* Define to 1 if you have the <dlfcn.h> header file. */
 #define HAVE_DLFCN_H 1
@@ -41,7 +41,7 @@
 #define HAVE_GETADDRINFO 1
 
 /* */
-/* #undef HAVE_GETHOSTBYNAME_R */
+#define HAVE_GETHOSTBYNAME_R 1
 
 /* Define to 1 if you have the `getpid' function. */
 #define HAVE_GETPID 1
@@ -116,7 +116,7 @@
 #define HAVE_PIPE 1
 
 /* Define to 1 if you have the `pipe2' function. */
-/* #undef HAVE_PIPE2 */
+#define HAVE_PIPE2 1
 
 /* Define to 1 if you have the `poll' function. */
 #define HAVE_POLL 1
@@ -231,10 +231,10 @@
 #define LOG4CPLUS_HAVE_CLOCK_GETTIME 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_CLOCK_NANOSLEEP */
+#define LOG4CPLUS_HAVE_CLOCK_NANOSLEEP 1
 
 /* */
-#define LOG4CPLUS_HAVE_CXX11_ATOMICS 1
+/* #undef LOG4CPLUS_HAVE_CXX11_ATOMICS */
 
 /* */
 #define LOG4CPLUS_HAVE_ENAMETOOLONG 1
@@ -267,7 +267,7 @@
 #define LOG4CPLUS_HAVE_GETADDRINFO 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_GETHOSTBYNAME_R */
+#define LOG4CPLUS_HAVE_GETHOSTBYNAME_R 1
 
 /* */
 #define LOG4CPLUS_HAVE_GETPID 1
@@ -339,7 +339,7 @@
 #define LOG4CPLUS_HAVE_PIPE 1
 
 /* */
-/* #undef LOG4CPLUS_HAVE_PIPE2 */
+#define LOG4CPLUS_HAVE_PIPE2 1
 
 /* */
 #define LOG4CPLUS_HAVE_POLL 1
