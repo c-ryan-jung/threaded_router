@@ -198,9 +198,10 @@ public:
             trip_request.nfaID = nfaID;
             request_vector.push_back(trip_request);
             //cout<<"okay"<<endl;
-        } while (!finished());
+        }while (!finished());
+        
         int cores = (int)std::thread::hardware_concurrency();
-        if (core_num != 0 && core_num <= cores)
+        if (core_num != 0 && core_num < cores)
         {
             cores = core_num;
         }

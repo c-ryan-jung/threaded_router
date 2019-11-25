@@ -85,7 +85,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
   ofstream read_out(glob_string);
   //read_out.open(glob_string, std::fstream::in);
   glob++;
-<<<<<<< HEAD
+
   mtx.unlock();*/
   //thread_count++;
   Request_Handler request_handler;
@@ -136,7 +136,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
-
+  
   //cout << "Status.." << endl;
   //read_out << "Status.." << endl;
 
@@ -149,13 +149,15 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
   // initialize request handler
 
   request_handler.set_network(&network);
-
+ 
   //request_handler.init();
   //put a thing here -----------------------v change  that
   vector<Trip_Request> trip_list = trips;
   //cout << "Status...." << endl;
   //read_out << "Status...." << endl;
-
+  /*for (int w = 0; w < trip_list.size(); w++){
+    cout <<trip_list[w].id<< endl;
+  }*/
   while (!trip_list.empty())
   {
 
@@ -167,10 +169,8 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
     //event_handler.clear();
 
     double time_elapsed;
-
-    router.find_path((Algorithm)algorithm, trip_request /* request_handler.request()*/, plan,
+    router.find_path((Algorithm)algorithm, trip_request /* ,request_handler.request()*/, plan,
                      time_elapsed, trip_request.nfaID);
-
     mtx1.lock();
     out_file << trip_request.id << '\t'
              << trip_request.source << '\t'
@@ -178,7 +178,7 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
 
     out_file << plan << endl;
     mtx1.unlock();
-
+    
     bool error = false;
     string error_message = "Differing distances:  request " + itos(trip_request.source) + "--" + itos(trip_request.destination) + "  distances";
 

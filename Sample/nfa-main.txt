@@ -1,3 +1,4 @@
 # Regular expression / NFA specification. Line 2 contains the number of NFAs. Note that the order of files defines the numbering of NFA specifications. Numbers start at 0. In this example, the numbers/labels are 0 and 1.
-1
+2
 ./NFA_w.txt
+./NFA_waw.txt
