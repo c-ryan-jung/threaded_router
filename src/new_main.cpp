@@ -77,17 +77,8 @@ void print_usage()
 }
 
 //Threaded trip request processing
-void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
-  /* mtx.lock();
-  string glob_string = string(1, glob);
-  glob_string = glob_string + "_out.txt";
-  ofstream read_out(glob_string);
-  //read_out.open(glob_string, std::fstream::in);
-  glob++;
-
-  mtx.unlock();*/
-  //thread_count++;
   Request_Handler request_handler;
   Plan plan;
   request_handler.set_mode(FILE_PAIRS);
@@ -111,53 +102,29 @@ void thread_method(const char *pairs_filename, vector<Trip_Request> trips, Netwo
     }
 
     char buffer[5000];
-    file.getline(buffer, 5000, '\n'); // Skip the header.
+    file.getline(buffer, 5000, '\n');
 
     int nNFAs;
 
     file >> nNFAs;
-    // cout << "Found " << nNFAs << " NFAs" << endl;
-    //read_out << "Found " << nNFAs << " NFAs" << endl;
     file.get();
 
     for (unsigned int i = 0; (int)i < nNFAs; ++i)
     {
       file.getline(buffer, 5000, '\n');
-      //cout << "NFA: " << i << "\t" << buffer << endl;
-      //read_out << "NFA: " << i << "\t" << buffer << endl;
       NFA_Graph *nfa = new NFA_Graph(buffer, network);
       nfaVector.push_back(nfa);
     }
   }
 
-  //cout << "Status." << endl;
-  //read_out << "Status." << endl;
-
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
   
-  //cout << "Status.." << endl;
-  //read_out << "Status.." << endl;
-
-  //event_handler.set_graph(network);
-
-  //cout << "Status..." << endl;
-
-  //read_out << "Status..." << endl;
-
-  // initialize request handler
-
   request_handler.set_network(&network);
  
   //request_handler.init();
-  //put a thing here -----------------------v change  that
   vector<Trip_Request> trip_list = trips;
-  //cout << "Status...." << endl;
-  //read_out << "Status...." << endl;
-  /*for (int w = 0; w < trip_list.size(); w++){
-    cout <<trip_list[w].id<< endl;
-  }*/
   while (!trip_list.empty())
   {
 
@@ -301,8 +268,12 @@ int main(int argc, char *argv[])
 
   LOG4CPLUS_DEBUG(main_logger, "Building NFA...");
   event_handler.set_graph(network);
+
+  //TODO CHANGE THIS
+
+  //Most if not all the changes should be coming from here
   //splitting everything up into threads
-  vector<vector<Trip_Request> > big_list = request_handler.thread_request(core_num);
+  //vector<vector<Trip_Request> > big_list = request_handler.thread_request(core_num);
   vector<std::thread> threads;
 
   out_file.open(out_filename);
@@ -311,26 +282,18 @@ int main(int argc, char *argv[])
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
   }
-  cout << "Thread Count: " << big_list.size() << endl;
-  for (int i = 0; i < big_list.size(); i++)
+
+
+  //arbitrary 4 put in as top value, will change that later
+  for (int i = 0; i < 4; i++)
   {
-    //current problem
-    threads.push_back(std::thread(thread_method, pairs_filename, std::ref(big_list[i]), std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
+    threads.push_back(std::thread(thread_method, pairs_filename, /*std::ref(big_list[i]),*/ std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
   }
 
   for (auto &entry : threads)
   {
     entry.join();
   }
-  //the start of the threaded method
-  /* vector <Trip_Request> thing = request_handler.thread_request();
-  int half_size = thing.size()/2;
-  vector <Trip_Request> thing1(thing.begin(), thing.begin() + half_size);
-  vector <Trip_Request> thing2(thing.begin()+ half_size, thing.end());
-  std::thread test(thread_method, std::ref(request_handler), thing1, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-  std::thread test1(thread_method, std::ref(request_handler), thing2, plan, std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename);
-  test.join();
-  test1.join();*/
 
   out_file.close();
 
