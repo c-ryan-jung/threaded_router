@@ -262,7 +262,7 @@ int main(int argc, char *argv[])
       request_handler.set_mode(SINGLE);
       break;
     case 'F':
-      request_input_file = optarg;
+      request_input_output_file = optarg;
       break;
     }
   }
