@@ -75,7 +75,8 @@ void print_usage()
        << " -g <graph>   graph (edge) file" << endl
        << " -N <NFAFile> file specifying nfa collection" << endl
        << " -s <core count> specifying how many cores used" << endl
-       << " -t <time>    time of departure" << endl;
+       << " -t <time>    time of departure" << endl
+       << " -F <request-input-output-file>" << endl;
 }
 
 
@@ -214,6 +215,7 @@ int main(int argc, char *argv[])
   const char *nfa_collection_filename = "";
   const char *pairs_filename = "";
   const char *out_filename = "plans.txt";
+  const char *request_input_output_file = "";
 
   // parse command-line arguments
   int c;
@@ -258,6 +260,9 @@ int main(int argc, char *argv[])
     case 't':
       request.start_time = atoi(optarg);
       request_handler.set_mode(SINGLE);
+      break;
+    case 'F':
+      request_input_file = optarg;
       break;
     }
   }
