@@ -13,6 +13,7 @@
 #include <thread>
 #include <mutex>
 #include <string>
+#include <utility>
 
 #include "dijkstra.hpp"
 #include "graph.hpp"
@@ -30,6 +31,7 @@ Event_Handler event_handler;
 char glob = 'a';
 std::mutex mtx;
 std::mutex mtx1;
+
 /// Logger.
 Logger main_logger = Logger::getInstance("Router");
 
@@ -76,6 +78,8 @@ void print_usage()
        << " -t <time>    time of departure" << endl;
 }
 
+
+
 //Threaded trip request processing
 void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
@@ -85,6 +89,7 @@ void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ N
   request_handler.set_stream(pairs_filename);
   vector<NFA_Graph *> nfaVector;
 
+  
   if (singleNFA == 1)
   {
     NFA_Graph *nfa = new NFA_Graph(nfa_filename, network);
@@ -121,9 +126,12 @@ void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ N
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
   
-  request_handler.set_network(&network);
+  //request_handler.set_network(&network);
  
   //request_handler.init();
+
+  //file splitting was previously based on going through these trips
+  //I have to read the file and put them into this vector of requests lol
   vector<Trip_Request> trip_list = trips;
   while (!trip_list.empty())
   {
@@ -133,7 +141,6 @@ void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ N
     float distance = 0.0;
 
     plan.path.clear();
-    //event_handler.clear();
 
     double time_elapsed;
     router.find_path((Algorithm)algorithm, trip_request /* ,request_handler.request()*/, plan,
