@@ -38,8 +38,8 @@ unsigned int ReadRouteRequestPairs(const char* filename, vector<string_pair>& re
         }
     }
     for(int i = 0; i < things.size(); i+=2){
-        if(fileCheck(things[i].c_str()) && fileCheck(things[i+1].c_str())){
-            printf("%s",things[i].c_str());
+        if(fileCheck(things[i].c_str())){
+            printf("%s",things[i].c_str()); //for testing purposes
             printf("%s",things[i+1].c_str());
             string_pair newPair(things[i],things[i+1]);
             request_name_vector.push_back(newPair);
