@@ -3,10 +3,16 @@
 #include <fstream>
 #include <sstream>
 #include <iostream>
+#include <sys/stat.h>
 
 using namespace std;
 
 typedef std::pair <std::string,std::string> string_pair; 
+
+bool fileCheck(const char* filename){
+    struct stat buffer;
+    return (stat (filename, &buffer) == 0); 
+}
 
 unsigned int ReadRouteRequestPairs(const char* filename, vector<string_pair>& request_name_vector){
     ifstream file(filename);
@@ -33,8 +39,10 @@ unsigned int ReadRouteRequestPairs(const char* filename, vector<string_pair>& re
         }
     }
     for(int i = 0; i < things.size(); i+=2){
-        pair<string,string> newPair(things[i],things[i+1]);
-        request_name_vector.push_back(newPair);
+        if(fileCheck(things[i].c_str) && fileCheck(things[i].c_str)){
+            pair<string,string> newPair(things[i],things[i+1]);
+            request_name_vector.push_back(newPair);
+        }
     }
     return 0;
 }
