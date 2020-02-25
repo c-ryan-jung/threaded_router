@@ -4,10 +4,9 @@
 #include <sstream>
 #include <iostream>
 #include <sys/stat.h>
+#include "ReadRouteRequestFile.hpp"
 
 using namespace std;
-
-typedef std::pair <std::string,std::string> string_pair; 
 
 bool fileCheck(const char* filename){
     struct stat buffer;
@@ -24,7 +23,7 @@ unsigned int ReadRouteRequestPairs(const char* filename, vector<string_pair>& re
     if(!file.is_open()){
       cout << "There was an error opening the file of Request Pairs." << endl;
       cout << "Filename given: " << filename << endl;
-      return(1);
+      return 1;
     }
     while(getline(file, line)){
         if(first){
@@ -39,9 +38,12 @@ unsigned int ReadRouteRequestPairs(const char* filename, vector<string_pair>& re
         }
     }
     for(int i = 0; i < things.size(); i+=2){
-        if(fileCheck(things[i].c_str) && fileCheck(things[i].c_str)){
-            pair<string,string> newPair(things[i],things[i+1]);
+        if(fileCheck(things[i].c_str()) && fileCheck(things[i].c_str())){
+            string_pair newPair(things[i],things[i+1]);
             request_name_vector.push_back(newPair);
+        }else{
+            cout<<"Error bad files given"<<endl;
+            return 1;
         }
     }
     return 0;

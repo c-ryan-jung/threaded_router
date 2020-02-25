@@ -27,4 +27,4 @@ new_main.o: new_main.cpp basics.hpp dijkstra.hpp events.hpp\
 	$(CC) -c $(FLAGS) $(OPT) $(INCDIR) new_main.cpp -o new_main.o
 
 clean:
-	rm -f *~ *.o new_main *.dot
+	rm -f *~ *.o new_main test *.dot
