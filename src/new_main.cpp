@@ -19,6 +19,7 @@
 #include "graph.hpp"
 #include "timer.hpp"
 #include "tools.hpp"
+#include "ReadRouteRequestFile.hpp"
 
 #include <log4cplus/layout.h>
 #include <log4cplus/logger.h>
@@ -82,7 +83,7 @@ void print_usage()
 
 
 //Threaded trip request processing
-void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ Network_Graph &network, unsigned int algorithm, ostream &out_file, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
+void thread_method(const char *pairs_filename, string_pair chunk, Network_Graph &network, unsigned int algorithm, int singleNFA, string nfa_filename, const char *nfa_collection_filename)
 {
   Request_Handler request_handler;
   Plan plan;
@@ -126,6 +127,8 @@ void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ N
   LOG4CPLUS_DEBUG(main_logger, "Building router...");
   Router router(network, nfaVector);
   LOG4CPLUS_DEBUG(main_logger, "Router built.");
+
+
   
   //request_handler.set_network(&network);
  
@@ -133,7 +136,9 @@ void thread_method(const char *pairs_filename, /*vector<Trip_Request> trips,*/ N
 
   //file splitting was previously based on going through these trips
   //I have to read the file and put them into this vector of requests lol
+
   vector<Trip_Request> trip_list = trips;
+  //TODO think about when to set up the trip request file
   while (!trip_list.empty())
   {
 
@@ -288,18 +293,21 @@ int main(int argc, char *argv[])
   //vector<vector<Trip_Request> > big_list = request_handler.thread_request(core_num);
   vector<std::thread> threads;
 
-  out_file.open(out_filename);
+  /*out_file.open(out_filename);
   if (!out_file)
   {
     cout << "Sorry, could not open file " << out_filename << ". Bye!" << endl;
     exit(-1);
-  }
-
+  }*/
+  std::vector<string_pair> requestName;
+  ReadRouteRequestPairs(request_input_output_file, requestName);
+  //TODO split the vectors
+  
 
   //arbitrary 4 put in as top value, will change that later
   for (int i = 0; i < 4; i++)
   {
-    threads.push_back(std::thread(thread_method, pairs_filename, /*std::ref(big_list[i]),*/ std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
+    threads.push_back(std::thread(thread_method, pairs_filename, requestName[i], std::ref(network), algorithm, std::ref(out_file), singleNFA, nfa_filename, nfa_collection_filename));
   }
 
   for (auto &entry : threads)
